@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{%block title%}{{webinfo.partner_page_title}}{%endblock%}
+{% load static %}
+{% block content %}
+<!--header-->
+  {% include 'header.html' %}
+  <main>
+    <section id="partner">
+      <h1 class="partner-title">Clients & Partners <img class="partner-icon" src="icons/partner.png" alt=""></h1>
+    </section>
+    
+    <section>
+      <div class="container mb-5 mt-5">
+        <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+          {% for p in partner %}
+          <div class="col">
+            <div class="p-3 border  rounded bg-white partner"><img class="partner-images"
+                src="{{p.company_logo.url}}" alt=""></div>
+          </div>
+          {% endfor %}
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+    <!-- ===========================================================Footer Start================================= -->
+{% include 'footer.html' %}
+
+  <!-- =========================================== footer end================================= -->
+{% endblock %}

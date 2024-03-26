@@ -1,0 +1,125 @@
+{% extends 'base.html'%}
+{%block title%}{{webinfo.about_page_title}}{%endblock%}
+{% load static %}
+{% block content %}
+{% include 'header.html' %}
+
+<main>
+    <section id="about-us">
+        <h1 id="about-title">{{webinfo.about_page_title}}</h1>
+    </section>
+
+    <section class="container">
+        <section id="about-section-1">
+            <div class="">
+                <div class="row row-cols-1 row-cols-lg-3 g-2 g-lg-3 mt-5 mb-5">
+                    <div class="col">
+                        <div class="rounded"
+                             style="text-align: center; font-size: 25px; color: white; background-color: rgb(15,26,67); padding: 20px;">
+                            Innovation
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="rounded"
+                             style="text-align: center; font-size: 25px; color: white; background-color: rgb(15,26,67); padding: 20px;">
+                            Quality
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="rounded"
+                             style="text-align: center; font-size: 25px; color: white; background-color: rgb(15,26,67); padding: 20px;">
+                            Convenience
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+
+
+        <!-- -------------------------------about- section 2 start-------------- -->
+        <h1 class="about-title">About {{webinfo.site_name}}</h1>
+        <section id="about-section-2">
+
+            <div class="container">
+                <div class="row row-cols-1 row-cols-lg-1 g-2 g-lg-3">
+                    <div class="col">
+                        <div class="p-5" style="text-align: center; color: white; text-align: justify;">
+                            {{webinfo.about_of_company}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- -------------------------------about-  section -2 end------------- -->
+
+        <section class="container mt-5 mb-5">
+            <h2 class="mb-5 text-warning">Expertise of {{webinfo.site_name}}</h2>
+            <p>{{webinfo.expertise_of_company | safe }}</p>
+        </section>
+
+        <!-- -------------------------------about section -3 start------------- -->
+        <section>
+            <img src="about-images/Mission-Vision.png" alt="" style="width: 100%;">
+        </section>
+        <section style="background-color:rgb(15,26,67); padding-top: 50px; padding-bottom: 50px;">
+            <div class="container">
+                <div class="row row-cols-1 row-cols-lg-2 g-2 g-lg-3">
+                    <div class="col">
+                        <div class="p-3">
+                            <h3 class="vission-mission-hedline">{{webinfo.vision_title}}</h3>
+                            <p class="vission-mission-information">
+                             {{webinfo.vision_desc}}
+                            </p>
+                            <img src="{{webinfo.vision_image.url}}" alt="" class="vission-mission-images">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-3">
+                            <h3 class="vission-mission-hedline">{{webinfo.mission_title}}</h3>
+                            <p class="vission-mission-information mission-information">
+                               {{webinfo.mission_desc}}
+                            </p>
+                            <img src="{{webinfo.mission_image.url}}" alt="" class="vission-mission-images">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- -------------------------------about section -3 end--------------- -->
+
+
+        <!-- ==========================================About Our capabilitis============ -->
+
+
+        <img src="{{webinfo.capabilities_section_banner.url}}" alt="" style="max-width: 100%; margin-bottom: 50px;">
+        <h1 class="about-title">{{webinfo.capabilities_section_title}}</h1>
+        <section id="our-capabilities-section">
+
+            <h1 class="product-header" style="text-align: center; color: white; padding-bottom: 30px;">
+            </h1>
+            <div class="container">
+                <div class="row row-cols-1 row-cols-lg-3 g-2 g-lg-3">
+                    {% for c in capability %}
+                    <div class="col">
+                        <div class="p-3 border-end"><img class="capabilitis-image"
+                                                         src="{{c.icon.url}}"
+                                                         alt="">
+                            <p class="capabilitis-information">{{c.info}}
+                            </p>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </section>
+    </section>
+</main>
+
+<!-- ===========================================================Footer Start================================= -->
+{% include 'footer.html' %}
+
+<!-- =========================================== footer end================================= -->
+
+{% endblock %}

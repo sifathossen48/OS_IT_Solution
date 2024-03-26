@@ -1,0 +1,44 @@
+{% extends 'base.html'%}
+{%block title%}{{webinfo.technology_page_title}}{%endblock%}
+{% load static %}
+{% block content %}
+{% include 'header.html' %}
+
+
+  <main>
+    <section id="technology">
+      <h1 class="tech-title">
+       {{webinfo.technology_page_title}}<img src="technology-images/u173.png" alt="" style="width: 60px; margin-left: 15px;"></h1>
+    </section>
+    
+      
+
+
+      <section>
+        <div class="container">
+          <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3 h-100 mb-5 pt-5">
+
+            {% for technology in tech %}
+            <div class="col">
+              <div class="p-3 bg-white rounded border" style="height: 130px;"><img style="width: 80px;"
+                  src="{{technology.tools_logo.url}}" alt="" class="tools"></div>
+            </div>
+            {% endfor %}
+
+
+          </div>
+        </div>
+      </section>
+      <!-- ------------------tools & technology end---------- -->
+
+  </main>
+
+
+    <!-- ===========================================================Footer Start================================= -->
+
+{% include 'footer.html' %}
+  
+  
+    <!-- =========================================== footer end================================= -->
+
+{% endblock %}

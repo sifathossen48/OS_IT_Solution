@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{%block title%}{{webinfo.contact_page_title}}{%endblock%}
+{% load static %}
+{% block content %}
+<!--header-->
+  {% include 'header.html' %}
+
+  <main>
+    <section id="contact">
+      <h1 class="erp-title">{{webinfo.contact_page_title}}</h1>
+    </section>
+    <section>
+      <div class="container mt-5">
+        <div class="row row-cols-1 row-cols-lg-2 g-2 g-lg-3">
+          <div class="col">
+            <div class="p-3">
+              <form method="post" action="{% url 'contact' %}">
+                {% for message in messages %}
+                   {{message}}
+                {% endfor %}
+                {% csrf_token %}
+                <div class="mb-3">
+                  <label  class="form-label">First Name</label>
+                  <input type="text" class="form-control" id="exampleInputEmail1" name="first_name" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                  <label  class="form-label">Last Name</label>
+                  <input type="text" class="form-control" id="exampleInputEmail1" name="last_name" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Email address</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp">
+                  <div id="emailHelp" class="form-text">We'll never share your Email with anyone
+                    else.</div>
+                </div>
+                
+                <div>
+                  <label for="exampleInputPassword1" class="form-label">Message</label>
+                  <textarea style="width: 100%" name="message" id="message" rows="10" placeholder=""
+                    class="placeholder"></textarea>
+                </div>
+                <div class="mb-3 form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                  <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+
+              </form>
+            </div>
+          </div>
+          <div class="col">
+            <div class="p-3 bg-light">
+              <h2 style="text-align: center; margin-bottom: 50px; font-weight: 600;">OUR OFFICE</h2>
+
+
+
+               {% for o in offices %}
+                <p>
+                <h2 style="display: inline-block;">{{o.country}}</h2> <img
+                  style="width: 70px; margin-bottom: 13px; margin-left: 20px;" src="{{o.flag.url}}"
+                  alt=""> <br>
+                {{o.detail | safe}}
+                </p>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+    </section>
+  </main>
+
+    <!-- ===========================================================Footer Start================================= -->
+
+
+
+{% include 'footer.html' %}
+
+  <!-- =========================================== footer end================================= -->
+
+{% endblock %}

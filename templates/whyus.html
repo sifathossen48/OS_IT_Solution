@@ -1,0 +1,90 @@
+{% extends 'base.html'%}
+{%block title%}{{webinfo.why_us_page_title}}{%endblock%}
+{% load static %}
+{% block content %}
+{% include 'header.html' %}
+
+<main>
+
+    <section id="whyUs">
+        <h1 class="erp-title">{{webinfo.why_us_page_title}}</h1>
+    </section>
+
+    <section class="container">
+        <div class="mt-5">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h3>
+                        <p style="text-align: center; padding-top: 50px; color: teal; overflow-wrap: break-word; width: 20em;">
+                            {{webinfo.business_solution_section_title}}</p>
+                    </h3>
+                    <p style="text-align: center; padding-top: 20px; overflow-wrap: break-word; width: 20em; margin:auto;">
+                        {{webinfo.business_solution_section_desc}}
+                    </p>
+                </div>
+                <div class="col-sm-6"><img src="{{webinfo.business_solution_section_image.url}}" alt=""
+                                           style="max-width: 100%;"></div>
+            </div>
+        </div>
+    </section>
+
+    {% for i in importantSupport %}
+    <section class="container">
+        <h1 class="section-title">{{i.title}}</h1>
+        <img style="width: 100%; margin-top: 20px;" src="{{i.image.url}}" alt="">
+    </section>
+    {% endfor %}
+    <section>
+
+
+        <div class="container-fluid"
+             style="background-color: rgb(127,82,199); padding-top: 50px; padding-bottom: 50px;">
+            <div class="row row-cols-1 row-cols-lg-2 g-2 g-lg-3">
+                <div class="col">
+                    <div class="p-3"><img src="{{webinfo.profession_section_banner.url}}" alt="" style="max-width: 100%;"></div>
+                </div>
+                <div class="col">
+                    <div class="p-3">
+                   {{webinfo.profession_of_company | safe }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% for s in support %}
+    <section class="container">
+        <h1 class="section-title">{{s.title}}</h1>
+
+        <img style="width: 100%;" src="{{s.image.url}}" alt="">
+    </section>
+    {% endfor %}
+
+
+
+    <h1 class="section-title">Our Values</h1>
+
+    <section id="values">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-lg-4 g-2 g-lg-3">
+                {% for v in values %}
+                <div class="col">
+                    <div class="p-3 border-end text-light">
+                        <h5><img class="value-icons" src="{{v.icon.url}}" alt="">{{v.title}}</h5>
+                        <p>{{v.desc}}</p>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </section>
+</main>
+
+
+<!-- ===========================================================Footer Start================================= -->
+
+
+{% include 'footer.html' %}
+<!-- =========================================== footer end================================= -->
+{% endblock %}

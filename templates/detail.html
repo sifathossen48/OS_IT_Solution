@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Development - OS IT Solutions LTD.</title>
+  <link rel="shortcut icon" href="images/favicon.jpg" type="image/x-icon">
+  <link rel="stylesheet" href="css/css.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+</head>
+
+<body>
+  <!-- massenger -->
+  <!-- Messenger Chat plugin Code -->
+  <div id="fb-root"></div>
+
+  <!-- Your Chat plugin code -->
+  <div id="fb-customer-chat" class="fb-customerchat">
+  </div>
+
+  <script>
+    var chatbox = document.getElementById('fb-customer-chat');
+    chatbox.setAttribute("page_id", "106572818431757");
+    chatbox.setAttribute("attribution", "biz_inbox");
+
+    window.fbAsyncInit = function () {
+      FB.init({
+        xfbml: true,
+        version: 'v11.0'
+      });
+    };
+
+    (function (d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
+  <header>
+    <section id="navbar">
+      <!-- ----------------------------------nav start------------------ -->
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm bgcolor">
+        <div class="container">
+          <a class="navbar-brand" href="index.html"><img class="shadow-sm" src="images/logo.png" alt=""> </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav " style="margin-left: 50px;">
+              <li class="nav-item">
+                <a class="nav-link active navbar-option" aria-current="page" href="index.html" id="x">Home</a>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle navbar-option x" href="#" id="navbarDropdownMenuLink" role="button"
+                  data-bs-toggle="dropdown" aria-expanded="false">
+                  Company
+                </a>
+                <ul class="dropdown-menu  pull-right dropdown-menu-color" aria-labelledby="navbarDropdownMenuLink">
+                  <li><a class="dropdown-item" href="about.html" id="x">About Us</a></li>
+                  <li><a class="dropdown-item" href="whyus.html" id="x">Why US ?</a></li>
+                  <li><a class="dropdown-item" href="team.html" id="x">Our Team</a></li>
+                  <li><a class="dropdown-item" href="gallery.html" id="x">Photo Gallery</a></li>
+                  <li><a class="dropdown-item" href="career.html" id="x">Career</a></li>
+                </ul>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle navbar-option x" href="#" id="navbarDropdownMenuLink" role="button"
+                  data-bs-toggle="dropdown" aria-expanded="false">
+                  Portfolio
+                </a>
+                <ul class="dropdown-menu dropdown-menu-color" aria-labelledby="navbarDropdownMenuLink">
+                  <li><a class="dropdown-item" href="technology.html" id="x">Technology</a></li>
+                  <li><a class="dropdown-item" href="partner.html" id="x">Partner & Alliances</a></li>
+                </ul>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Solution & Products </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#" id="x">Software Based
+                      Solution</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="erp.html" id="x">ERP Solutions</a></li>
+                      <li><a class="dropdown-item" href="ekyc.html" id="x">Digital eKYC</a></li>
+                      <li><a class="dropdown-item" href="hr.html" id="x">Corporate HR & Payroll</a></li>
+                      <li><a class="dropdown-item" href="app.html" id="x">Android App Development</a></li>
+                      <li><a class="dropdown-item" href="ios.html" id="x">iOS App Development</a></li>
+                      <li><a class="dropdown-item" href="web.html" id="x">Web Development</a></li>
+                      <li><a class="dropdown-item" href="marketing.html" id="x">Digital Marketing</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="http://google.com"
+                      id="x">Our Core Products</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="appoinment.html" id="x">Smart Appoinment & Visitor</a></li>
+                      <li><a class="dropdown-item" href="queue.html" id="x">Queue Management Solutions</a></li>
+                      <li><a class="dropdown-item" href="training.html" id="x">Online Training Management</a></li>
+                      <li><a class="dropdown-item" href="digitalLearning.html" id="x">Digital Education Solutions</a></li>
+                      <li><a class="dropdown-item" href="kiosk.html" id="x">KIOSK Based Solutions</a></li>
+                      <li><a class="dropdown-item" href="net.html" id="x">IT Support & Solutions</a></li>
+                      <li><a class="dropdown-item" href="products.html" id="x">Hardware and Accessories Support</a></li>
+                      <li><a class="dropdown-item" href="led.html" id="x">Cloud LED</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link navbar-option" href="newsroom.html" id="x">News Room</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link navbar-option" href="contact.html" id="x">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- ---------------------------nav end------------ -->
+    </section>
+  </header>
+    <main>
+      <section id="web">
+        <h1 class="erp-title">Web Development <img class="web-icon" src="icons/programming.png" alt=""></h1>
+      </section>
+        <section class="container">
+
+            <p class="mt-5" >
+                Our Process for web development is underpinned by our user-centric approach. We follow agile and Service
+                Design principles, and our skilled developers produce digital
+                platforms that are scalable, secure and efficient.
+            </p>
+            <img style="margin-right: auto; margin-left: auto; display: block; max-width: 100%;"
+                src="web-images/web-development.gif" alt="">
+
+           <h1 class="section-title">Web Design & Development</h1>
+
+            <div class="">
+                <div class="row row-cols-1 row-cols-lg-3 g-2 g-lg-3">
+                    <div class="col">
+                        <div class="p-3 border border-warning"><img
+                                style="width: 50px; margin-left: auto; margin-right: auto; display: block;"
+                                src="web-images/pencil.svg" alt="">
+                            <h3 style="text-align:center; color: rgb(24, 127, 145); margin-top: 30px;">Best Design</h3>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-3 border border-warning"><img
+                                style="width: 50px; margin-left: auto; margin-right: auto; display: block;"
+                                src="web-images/notebook-computer.svg" alt="">
+                            <h3 style="text-align:center; color: rgb(24, 127, 145); margin-top: 30px;">Responsiveness
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-3 border border-warning"><img
+                                style="width: 50px; margin-left: auto; margin-right: auto; display: block;"
+                                src="web-images/smartphone.svg" alt="">
+                            <h3 style="text-align:center; color: rgb(24, 127, 145); margin-top: 30px;">Mobile Friendly
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-3 border border-warning"><img
+                                style="width: 50px; margin-left: auto; margin-right: auto; display: block;"
+                                src="web-images/settings.svg" alt="">
+                            <h3 style="text-align:center; color: rgb(24, 127, 145); margin-top: 30px;">Fully Dynamic
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-3 border border-warning"><img
+                                style="width: 50px; margin-left: auto; margin-right: auto; display: block;"
+                                src="web-images/chat.svg" alt="">
+                            <h3 style="text-align:center; color: rgb(24, 127, 145); margin-top: 30px;">Live Chat/
+                                Feedback
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-3 border border-warning"><img
+                                style="width: 50px; margin-left: auto; margin-right: auto; display: block;"
+                                src="web-images/seo.svg" alt="">
+                            <h3 style="text-align:center; color: rgb(24, 127, 145); margin-top: 30px;">SEO Optimized
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img class="mt-5 mb-5 shadow"
+                style="margin-right: auto; margin-left: auto; display: block; max-width: 100%;"
+                src="web-images/Content-Optimised-for-SEO-2.webp" alt="">
+        </section>
+
+        <div class="container mt-5 mb-5">
+          <div class="row row-cols-1 row-cols-lg-2 g-2 g-lg-3">
+             
+              <div class="col">
+                  <div class="p-3">
+                      <div class="d-grid gap-6">
+                          <div class="p-1 mb-4 border-bottom"><span>
+                                  <h5 style="color: coral;">Frontend :</h5>
+                              </span> HTML, Javascript, Ajax, Bootstrap, Shapecss, Scss, Webpack, Socket.Io, Vuejs,
+                              Nuxtjs.</div>
+                          <div class="p-2 mb-4 border-bottom"><span>
+                                  <h5 style="color: coral;">Database :</h5>
+                              </span> Sqlite, Mysql, Oracle, Redis, Caches.</div>
+                          <div class="p-2 mb-4 border-bottom"><span>
+                                  <h5 style="color: coral;">Language :</h5>
+                              </span> Python, Php, Javascript, Java, C++</div>
+                          <div class="p-2 mb-4 border-bottom"><span>
+                                  <h5 style="color: coral;">Backend Framework :</h5>
+                              </span> Laravel, Django.</div>
+                          <div class="p-2 mb-4 border-bottom"><span>
+                                  <h5 style="color: coral;">Cloud Solution :</h5>
+                              </span> Microsoft Azure, Amazon, Digital Ocean.</div>
+                          <div class="p-2 mb-4 border-bottom"><span>
+                                  <h5 style="color: coral;">Frontend Framework :</h5>
+                              </span> Vuejs, Nuxtjs, Reactjs.</div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col">
+                <div class="pt-4"><img style="max-width: 100%;" src="web-images/web-development.jpg" alt=""></div>
+            </div>
+          </div>
+      </div>
+        <div class="container mt-5 mb-5">
+            <div class="row row-cols-1 row-cols-lg-2 g-2 g-lg-3">
+                <div class="col">
+                    <div class="pt-4"><img style="max-width: 100%;" src="web-images/web-development.jpg" alt=""></div>
+                </div>
+                <div class="col">
+                    <div class="p-3">
+                        <div class="d-grid gap-6">
+                            <div class="p-1 mb-4 border-bottom"><span>
+                                    <h5 style="color: coral;">Frontend :</h5>
+                                </span> HTML, Javascript, Ajax, Bootstrap, Shapecss, Scss, Webpack, Socket.Io, Vuejs,
+                                Nuxtjs.</div>
+                            <div class="p-2 mb-4 border-bottom"><span>
+                                    <h5 style="color: coral;">Database :</h5>
+                                </span> Sqlite, Mysql, Oracle, Redis, Caches.</div>
+                            <div class="p-2 mb-4 border-bottom"><span>
+                                    <h5 style="color: coral;">Language :</h5>
+                                </span> Python, Php, Javascript, Java, C++</div>
+                            <div class="p-2 mb-4 border-bottom"><span>
+                                    <h5 style="color: coral;">Backend Framework :</h5>
+                                </span> Laravel, Django.</div>
+                            <div class="p-2 mb-4 border-bottom"><span>
+                                    <h5 style="color: coral;">Cloud Solution :</h5>
+                                </span> Microsoft Azure, Amazon, Digital Ocean.</div>
+                            <div class="p-2 mb-4 border-bottom"><span>
+                                    <h5 style="color: coral;">Frontend Framework :</h5>
+                                </span> Vuejs, Nuxtjs, Reactjs.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+  <!-- ===========================================================Footer Start================================= -->
+
+
+  <section class="mt-2" style="background-color: rgb(15,26,67); border-radius: 20px; padding-bottom: 20px;">
+    <h2
+      style="text-align: center; color: white; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif!important; padding-top: 30px; padding-bottom: 30px;">
+      GET IN TOUCH</h2>
+    <div class="container">
+      <div class="row row-cols-1 row-cols-lg-3 g-2 g-lg-3">
+        <div class="col">
+          <div class="">
+            <img src="images/os logolatest.png" alt="">
+            <p class="mt-3 text-white">Hotline :</p>
+            <p class="mt-3 text-white"><img src="icons/telephone.svg" alt=""
+                style="width: 30px; margin-right: 20px;">+8801988224411</p>
+            <p class="text-white"><img src="icons/gmail.svg" alt=""
+                style="width: 30px; margin-right: 20px;">info@ositsltd.com</p>
+          </div>
+        </div>
+        <div class="col">
+          <div class="p-3">
+
+            <p>
+              <a class="footer-link" href="about.html">About Us</a> <br>
+              <a class="footer-link" href="whyus.html">Why Us</a> <br>
+              <a class="footer-link" href="team.html">Our Team</a> <br>
+              <a class="footer-link" href="products.html">Products</a> <br>
+              <a class="footer-link" href="newsroom.html">News Room</a> <br>
+              <a class="footer-link" href="contact.html">Contact US</a> <br>
+              <a class="footer-link" href="https://www.designrush.com/agency/profile/os-it-solutions">You can see OS IT</a>
+            </p>
+            <p>
+              <a target="_blank" href="https://www.linkedin.com/company/os-it-solutions-ltd/?viewAsMember=true"><img
+                  src="social icons/u587.png" alt="" class="footer-social-icons"></a>
+              <a target="_blank" href="https://twitter.com/ositsltd"><img src="social icons/u588.png" alt=""
+                  class="footer-social-icons"></a>
+              <a target="_blank" href="https://www.facebook.com/ositsltd"><img src="social icons/u589.png" alt=""
+                  class="footer-social-icons"></a>
+              <a target="_blank" href="https://www.instagram.com/ositsltd/"><img src="social icons/instagram.png" alt=""
+                  class="footer-social-icons"></a>
+              <a target="_blank" href="https://www.youtube.com/channel/UCjO9XnxMX7NUbYkKsn45t1w/featured"><img
+                  src="social icons//youtube.png" alt="" class="footer-social-icons youtube"></a>
+            </p>
+          </div>
+        </div>
+        <div class="col">
+          <div class="">
+            <h5 class="text-white">Bangladesh Office Location</h5>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.627222504481!2d90.40196741544405!3d23.760669194299698!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b947c5bab887%3A0x6770636383085e3!2zVG9vbCAmIFRlY2hub2xvZ3kgSW5zdGl0dXRlIChUVEkpLCBCSVRBQyAtIOCmn-CngeCmsiDgpo_gpqjgp43gpqEg4Kaf4KeH4KaV4Kao4KeL4Kay4Kac4Ka_IOCmh-CmqOCmuOCnjeCmn-Cmv-Cmn-Cmv-CmieCmnyAo4Kaf4Ka_4Kaf4Ka_4KaG4KaHKSwg4Kas4Ka_4Kaf4Ka-4KaV!5e0!3m2!1sen!2sbd!4v1625916064000!5m2!1sen!2sbd"
+              width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer style=" margin-top: 3px; background-color: rgb(15,26,67); border-radius: 20px;">
+    <section class="container ">
+      <h3
+        style="text-align: center; color: white; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif!important; padding-top: 30px; padding-bottom: 30px;">
+        OUR OFFICE</h3>
+      <div class="">
+        <div class="row row-cols-1 row-cols-lg-3 g-2 g-lg-3">
+          <div class="col">
+            <div class="p-3 border rounded" style="height: 300px; color: white;">
+              <img style="height: 50px; margin-top: 10px; margin-right: 10px;" src="icons/country-flag/bangladesh.svg"
+                alt="">
+              <h4 style="display: inline-block; color: white">Bangladesh Office</h4>
+              <p class="" style="padding-top: 20px;">
+              <h5 style="color: white;">Corporate Office : </h5>
+              <p>31/1, Sharif Complex level 9, Purana Paltan, Dhaka-1000.</p>
+              <h5 style="color: white;">R&D Office : </h5>
+              <p>Suit 704, 6th Floor, TTI Bhaban, BITAC, Tejgoan I/A, Dhaka-1208, Bangladesh</p>
+              </p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="p-3 border rounded" style="height: 300px; color: white;">
+              <img style="height: 50px; margin-right: 10px;" src="icons/country-flag/united-states.svg" alt="">
+              <h4 style="display: inline-block; color: white">USA Office</h4>
+              <p class="" style="text-align: justify; padding-top: 40px;">
+                150 N State Road 7, Margate, FL 33063, Florida, USA <br> <br>
+                Phone : +1 754 267 1098 <br>
+                Email : sales.usa@ositsltd.com
+            </div>
+          </div>
+          <div class="col">
+            <div class="p-3 border rounded" style="height: 300px; color: white;"><img
+                style="height: 50px; margin-right: 10px;" src="icons/country-flag/australia.svg" alt="">
+              <h4 style="display: inline-block; color: white;">Australia Office</h4>
+              <p class="" style="text-align: justify; padding-top: 40px;">
+                29 Salerno Court, Elizabeth East, SA 5112 <br> <br>
+                Phone : +61424302643 (Whatsapp) <br>
+                Email : sales.au@ositsltd.com
+            </div>
+          </div>
+        </div>
+        <p style="color: white; padding: 30px; text-align: center;">Copyright and Developed © 2022 OS IT Solutions LTD.
+        </p>
+    </section>
+  </footer>
+
+
+  <!-- =========================================== footer end================================= -->
+
+
+<script>
+  var url = 'https://wati-integration-service.clare.ai/ShopifyWidget/shopifyWidget.js?32129';
+  var s = document.createElement('script');
+  s.type = 'text/javascript';
+  s.async = true;
+  s.src = url;
+  var options = {
+    "enabled": true,
+    "chatButtonSetting": {
+      "backgroundColor": "#4dc247",
+      "ctaText": "",
+      "borderRadius": "25",
+      "marginLeft": "0",
+      "marginBottom": "110",
+      "marginRight": "20",
+      "position": "right"
+    },
+    "brandSetting": {
+      "brandName": "OS IT Solutions LTD.",
+      "brandSubTitle": "Typically replies within a day",
+      "brandImg": "images/favicon.jpg",
+      "welcomeText": "Hi there!\nHow can I help you?",
+      "messageText": "",
+      "backgroundColor": "#0a5f54",
+      "ctaText": "Start Chat",
+      "borderRadius": "25",
+      "autoShow": false,
+      "phoneNumber": "8801911310766"
+    }
+  };
+  s.onload = function () {
+    CreateWhatsappChatWidget(options);
+  };
+  var x = document.getElementsByTagName('script')[0];
+  x.parentNode.insertBefore(s, x);
+</script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+  crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,431 @@
+{% extends 'base.html' %}
+{%block title%}{{webinfo.root_page_title}}{%endblock%}
+{% load static %}
+{% block content %}
+<!--header-->
+  {% include 'header.html' %}
+  <main>
+    <!-- -------------------------------slider start------------- -->
+
+
+    <!-- #region Jssor Slider Begin -->
+    <!-- Generator: Jssor Slider Composer -->
+    <!-- Source: https://www.jssor.com/demos/full-width-slider.slider/=edit -->
+    <script src="{% static 'js/jssor.slider-28.1.0.min.js'%}" type="text/javascript"></script>
+    <script type="text/javascript">
+      window.jssor_1_slider_init = function () {
+
+        var jssor_1_SlideoTransitions = [
+          [{ b: -1, d: 1, ls: 0.5 }, { b: 0, d: 1000, y: 5, e: { y: 6 } }],
+          [{ b: -1, d: 1, ls: 0.5 }, { b: 200, d: 1000, y: 25, e: { y: 6 } }],
+          [{ b: -1, d: 1, ls: 0.5 }, { b: 400, d: 1000, y: 45, e: { y: 6 } }],
+          [{ b: -1, d: 1, ls: 0.5 }, { b: 600, d: 1000, y: 65, e: { y: 6 } }],
+          [{ b: -1, d: 1, ls: 0.5 }, { b: 800, d: 1000, y: 85, e: { y: 6 } }],
+          [{ b: -1, d: 1, ls: 0.5 }, { b: 500, d: 1000, y: 195, e: { y: 6 } }],
+          [{ b: 0, d: 2000, y: 30, e: { y: 3 } }],
+          [{ b: -1, d: 1, rY: -15, tZ: 100 }, { b: 0, d: 1500, y: 30, o: 1, e: { y: 3 } }],
+          [{ b: -1, d: 1, rY: -15, tZ: -100 }, { b: 0, d: 1500, y: 100, o: 0.8, e: { y: 3 } }],
+          [{ b: 500, d: 1500, o: 1 }],
+          [{ b: 0, d: 1000, y: 380, e: { y: 6 } }],
+          [{ b: 300, d: 1000, x: 80, e: { x: 6 } }],
+          [{ b: 300, d: 1000, x: 330, e: { x: 6 } }],
+          [{ b: -1, d: 1, r: -110, sX: 5, sY: 5 }, { b: 0, d: 2000, o: 1, r: -20, sX: 1, sY: 1, e: { o: 6, r: 6, sX: 6, sY: 6 } }],
+          [{ b: 0, d: 600, x: 150, o: 0.5, e: { x: 6 } }],
+          [{ b: 0, d: 600, x: 1140, o: 0.6, e: { x: 6 } }],
+          [{ b: -1, d: 1, sX: 5, sY: 5 }, { b: 600, d: 600, o: 1, sX: 1, sY: 1, e: { sX: 3, sY: 3 } }]
+        ];
+
+        var jssor_1_options = {
+          $AutoPlay: 1,
+          $LazyLoading: 1,
+          $CaptionSliderOptions: {
+            $Class: $JssorCaptionSlideo$,
+            $Transitions: jssor_1_SlideoTransitions
+          },
+          $ArrowNavigatorOptions: {
+            $Class: $JssorArrowNavigator$
+          },
+          $BulletNavigatorOptions: {
+            $Class: $JssorBulletNavigator$,
+            $SpacingX: 20,
+            $SpacingY: 20
+          }
+        };
+
+        var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+
+        /*#region responsive code begin*/
+
+        var MAX_WIDTH = 1600;
+
+        function ScaleSlider() {
+          var containerElement = jssor_1_slider.$Elmt.parentNode;
+          var containerWidth = containerElement.clientWidth;
+
+          if (containerWidth) {
+
+            var expectedWidth = Math.min(MAX_WIDTH || containerWidth, containerWidth);
+
+            jssor_1_slider.$ScaleWidth(expectedWidth);
+          }
+          else {
+            window.setTimeout(ScaleSlider, 30);
+          }
+        }
+
+        ScaleSlider();
+
+        $Jssor$.$AddEvent(window, "load", ScaleSlider);
+        $Jssor$.$AddEvent(window, "resize", ScaleSlider);
+        $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
+        /*#endregion responsive code end*/
+      };
+    </script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300italic,regular,italic,700,700italic&subset=latin-ext,greek-ext,cyrillic-ext,greek,vietnamese,latin,cyrillic"
+      rel="stylesheet" type="text/css" />
+    <style>
+      /* jssor slider loading skin spin css */
+      .jssorl-009-spin img {
+        animation-name: jssorl-009-spin;
+        animation-duration: 1.6s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+      }
+
+      /*jssor slider bullet skin 132 css*/
+      .jssorb132 {
+        position: absolute;
+      }
+
+      .jssorb132 .i {
+        position: absolute;
+        cursor: pointer;
+      }
+
+      .jssorb132 .i .b {
+        fill: #fff;
+        fill-opacity: 0.8;
+        stroke: #000;
+        stroke-width: 1600;
+        stroke-miterlimit: 10;
+        stroke-opacity: 0.7;
+      }
+
+      .jssorb132 .i:hover .b {
+        fill: #000;
+        fill-opacity: .7;
+        stroke: #fff;
+        stroke-width: 2000;
+        stroke-opacity: 0.8;
+      }
+
+      .jssorb132 .iav .b {
+        fill: #000;
+        stroke: #fff;
+        stroke-width: 2400;
+        fill-opacity: 0.8;
+        stroke-opacity: 1;
+      }
+
+      .jssorb132 .i.idn {
+        opacity: 0.3;
+      }
+
+      .jssora051 {
+        display: block;
+        position: absolute;
+        cursor: pointer;
+      }
+
+      .jssora051 .a {
+        fill: none;
+        stroke: #fff;
+        stroke-width: 360;
+        stroke-miterlimit: 10;
+      }
+
+      .jssora051:hover {
+        opacity: .8;
+      }
+
+      .jssora051.jssora051dn {
+        opacity: .5;
+      }
+
+      .jssora051.jssora051ds {
+        opacity: .3;
+        pointer-events: none;
+      }
+    </style>
+    <svg viewbox="0 0 0 0" width="0" height="0" style="display:block;position:relative;left:0px;top:0px;">
+      <defs>
+        <filter id="jssor_1_flt_1" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stddeviation="4"></feGaussianBlur>
+        </filter>
+        <radialGradient id="jssor_1_grd_2">
+          <stop offset="0" stop-color="#fff"></stop>
+          <stop offset="1" stop-color="#000"></stop>
+        </radialGradient>
+        <mask id="jssor_1_msk_3">
+          <path fill="url(#jssor_1_grd_2)" d="M600,0L600,400L0,400L0,0Z" x="0" y="0"
+            style="position:absolute;overflow:visible;"></path>
+        </mask>
+      </defs>
+    </svg>
+    <div id="jssor_1"
+      style="position:relative;margin:0 auto;top:0px;left:0px;width:1600px;height:560px;overflow:hidden;visibility:hidden;">
+      <!-- Loading Screen -->
+      <div data-u="loading" class="jssorl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;">
+        <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="img/spin.svg" />
+      </div>
+      <div data-u="slides"
+        style="cursor:default;position:relative;top:0px;left:0px;width:1600px;height:560px;overflow:hidden;">
+       {% for s in sliders %}
+        <div>
+          <img data-u="image" data-src="{{s.image.url}}" />
+          <div data-ts="flat" data-p="1080"
+            style="left:0px;top:0px;width:1600px;height:560px;position:absolute; background-color: #000; opacity: 0.6;">
+            <div data-to="50% 50%" data-t="12"
+              style="left:690px;top:140px;width:700px;height:350px;position:absolute;color:white;line-height:1.2;letter-spacing:0.1em;">
+              <h1 style="font-size: 40px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+                {{s.title}}</h1>
+              <p>
+              <h5>{{s.desc}}</h5>
+              </p>
+            </div>
+          </div>
+        </div>
+       {% endfor %}
+      </div>
+      <!-- Bullet Navigator -->
+      <div data-u="navigator" class="jssorb132" style="position:absolute;bottom:24px;right:16px;" data-autocenter="1"
+        data-scale="0.5" data-scale-bottom="0.75">
+        <div data-u="prototype" class="i" style="width:12px;height:12px;">
+          <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+            <circle class="b" cx="8000" cy="8000" r="5800"></circle>
+          </svg>
+        </div>
+      </div>
+
+    </div>
+    <script type="text/javascript">jssor_1_slider_init();
+    </script>
+    <!-- #endregion Jssor Slider End -->
+
+
+    <!-- --------------------------------slider end--------------- -->
+
+
+    <!-- --------------------------------Solution and service sectuion start------------------- -->
+    <h1 class="section-title">{{webinfo.services_section_title}}</h1>
+
+    <section class="container">
+      <div class="row row-cols-1 row-cols-md-4 g-4">
+        {% for software in softwareService %}
+        <div class="col">
+          <a href="#" class="solutions">
+            <div class="shadow-sm">
+              <img src="{{software.cover_photo.url}}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title fw-bold">{{software.title}}</h5>
+                <p class="card-text">{{software.get_short_desc}}.. <img class="arrow-icon" src="{% static 'solution&service/right-arrow.png'%}" alt=""></p>
+              </div>
+            </div>
+          </a>
+        </div>
+        {% endfor %}
+
+
+
+
+      </div>
+    </section>
+    <!-- --------------------------------Solution and service setion end----------- -->
+
+    <!-- --------------------------------solution and Products start--------------- -->
+
+
+    <h1 class="section-title">{{webinfo.services_section_title2}}</h1>
+    <section id="solution-product">
+      <div class="container">
+        <div class="row row-cols-1 row-cols-md-4 g-4">
+          {% for device in deviceService %}
+          <div class="col">
+            <a href="#" class="solutions">
+              <div class="card">
+                <img src="{{device.cover_photo.url}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text mt-3 mb-3 text-center">Smart Appoinment & Visitor Management<img
+                      class="arrow-icon" src="solution&service/arrow.png" alt=""></p>
+                </div>
+              </div>
+            </a>
+          </div>
+          {% endfor %}
+        </div>
+
+      </div>
+      </div>
+    </section>
+
+
+    <!-- ---------------------------------Solution and Product end-=--------------- -->
+
+
+
+    <!-- ---------------------------------OUR CONSULTANCY SERVICE Start---------------- -->
+    <h1 class="section-title">Our Consultancy Services</h1>
+    <section id="our-service">
+      <div class="container">
+        <div class="row row-cols-2 row-cols-lg-5 g-1 g-lg-3">
+
+
+           {% for cs in consultancyServices %}
+          <div class="col">
+            <div class="p-3 consultancy-services"><img src="{{cs.icon.url}}" alt=""
+                class="consultancy-service-icons">
+              <p class="consultancy-service-intro">{{cs.title}}</p>
+            </div>
+          </div>
+          {% endfor %}
+
+
+
+        </div>
+      </div>
+    </section>
+    <!-- ---------------------------------OUR CONSULTANCY SERVICE end---------------- -->
+
+    <!-- -----------------------------News Rooms start--------------- -->
+
+    <section class="container" id="">
+      <h1 class="section-title">News Room</h1>
+      <div class="row row-cols-1 row-cols-md-4 g-2">
+         {% for nr in newsRooms %}
+        <div class="col">
+          <div class="card" style="height: 525px;">
+            <img src="{{nr.image.url}}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p style="text-align: justify;">{{nr.desc}}</p>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+      <h3 style="text-align: center; margin-top: 40px; font-size: 16px;"><a href="newsroom.html"
+          class="know-more-option"><img style="margin-right: 20px;" src="icons/know more.svg" alt=""> Explore more</a>
+      </h3>
+    </section>
+    <!-- ---------------------news rooms end---------------- -->
+
+
+
+
+    <section>
+      <h1 class="section-title">Key Client Portfolio</h1>
+      <div class="container brand-carousel section-padding owl-carousel">
+        {% for client in clients %}
+        <div class="single-logo">
+          <img class="" src="{{client.company_logo.url}}" alt=""
+            style="width: 50px; margin-left: auto;margin-right: auto; display: block;">
+        </div>
+        {% endfor %}
+      </div>
+
+      <h3 style="text-align: center; margin-top: 40px; font-size: 16px;"><a href="{% url 'partner'%}"
+          class="know-more-option"><img style="margin-right: 20px;" src="{% static 'icons/know more.svg' %}" alt="">Explore more</a>
+      </h3>
+    </section>
+
+    <section>
+      <section>
+        <h1 class="section-title">Partner & Alliances</h1>
+        <div class="container brand-carousel section-padding owl-carousel">
+          {% for p in partners %}
+          <div class="single-logo">
+            <img class="" src="{{p.company_logo.url}}" alt=""
+              style="width: 150px; margin-left: auto;margin-right: auto; display: block;">
+          </div>
+         {% endfor %}
+        </div>
+
+        <h3 style="text-align: center; margin-top: 40px; font-size: 16px;"><a href="{% url 'partner'%}"
+            class="know-more-option"><img style="margin-right: 20px;" src="{% static 'icons/know more.svg' %}" alt="">Explore more</a>
+        </h3>
+      </section>
+      <!-- --------------------------partner and clients end------------------- -->
+
+      <!-- ----------------tool & technology start------------------ -->
+      <section class="pt-4 mt-5">
+
+        <h1 class="section-title">Tools & Technology</h1>
+        <div class="container mb-5">
+          <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3 h-100">
+            {% for tech in techs %}
+            <div class="col">
+              <div class="p-3 bg-white rounded border" style="height: 130px;"><img style="width: 80px;"
+                  src="{{tech.tools_logo.url}}" alt="" class="tools"></div>
+            </div>
+            {% endfor %}
+
+          </div>
+
+          {% if remainingTechs %}
+          <!-- Button trigger modal -->
+          <h6 style="text-align: center;"><button type="button" class="button mt-5" data-bs-toggle="modal"
+              data-bs-target="#exampleModal">
+              More Technology
+            </button></h6>
+
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-xl">
+              <div class="modal-content">
+                <div class="mt-4 ms-4">
+                  <h4 class="border-start border-5 border-warning container"
+                    style="padding-bottom: 15px; padding-top: 15px; padding-left: 20px; color: rgb(26, 112, 138);">Tools
+                    &
+                    Technology</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="container mb-5">
+                    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3 h-100">
+                      {% for rtechs in remainingTechs %}
+                      <div class="col">
+                        <div class="p-3 rounded bg-white border" style="height: 130px;"><img
+                            src="{{rtechs.tools_logo.url}}" alt=""
+                            class="tools">
+                        </div>
+                      </div>
+                      {% endfor %}
+
+                    </div>
+                  </div>
+                </div>
+                <div class="ms-auto mb-3 mx-3">
+                  <button type="button" class="button" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endif %}
+      </section>
+
+      <!-- ------------------tools & technology End---------- -->
+
+  </main>
+
+
+
+  <!-- ===========================================================Footer Start================================= -->
+
+
+{% include 'footer.html' %}
+
+  <!-- =========================================== footer end================================= -->
+
+{% endblock %}

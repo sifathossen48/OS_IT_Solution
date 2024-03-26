@@ -1,0 +1,154 @@
+{% extends 'base.html'%}
+{%block title%}{{webinfo.team_page_title}}{%endblock%}
+{% load static %}
+{% block content %}
+{% include 'header.html' %}
+
+<main>
+
+    <section id="team">
+
+        <h1 class="erp-title">{{webinfo.team_page_title}}</h1>
+    </section>
+
+
+    <!-- ------------------------------------------------------ -->
+
+    <section class="">
+
+        <section class="mt-5 container">
+            <div>
+                <div class="row row-cols-1 row-cols-lg-2 g-2 g-lg-3 ">
+                    {% for c in ceo%}
+                    {% if forloop.last %}
+                    <div class="col">
+                        <div style="border-radius: 15px;" class="p-5 shadow-sm"><img
+                                style="max-width: 100%; margin: auto; display: block;" src="{{c.photo.url}}" alt="">
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="p-3 ">
+                            <h3 style="text-align: center; margin-top: 30px;">{{c.name}} <br>
+                                {{c.title}}
+                            </h3>
+                            <p><span style="font-size: 20px; color: coral;">{{c.academic_qualification}}</p>
+                            <p>Email: {{c.email}}</p>
+                            <p style="font-size: 20px; color: coral;">Profile Summary :</p>
+                            <p style="text-align: justify;">
+                  <span style="font-size: 20px; color: rgb(194, 10, 194);">
+                    {{c.get_short_desc | safe}}
+                  <br> <br>
+                      <!-- Button trigger modal -->
+                  <button type="button" class="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Explore more
+                  </button>
+
+                      <!-- Modal -->
+                <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                     aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered modal-xl">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">{{c.name}} <br>
+                          {{c.title}}</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body" style="text-align: justify;">
+
+                        <p> <span style="font-size: 20px; color: coral;">{{c.academic_qualification}}</span> </p>
+                        <p>Email: {{c.email}}</p>
+                        <p style="font-size: 20px; color: coral;">Profile Summary :</p>
+                        <p style="text-align: justify;">
+                       {{c.desc | safe }}
+                      </div>
+                      <div class="ms-auto mx-4 mb-4">
+                        <button type="button" class="button" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                            </p>
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+        <!-- ------------------------------------------------------ -->
+        <h1 class="section-title">Management Team</h1>
+        <section class="container mt-5 shadow-sm p-5 rounded">
+
+            <div class="">
+                <div class="row row-cols-1 row-cols-lg-2 g-2 g-lg-3">
+                    {% for m in management_team %}
+                    <div class="col ">
+                        <div class="p-3 pb-5 border">
+                            <img style="width: 458px;" class="team-images" src="{{m.photo.url}}" alt="">
+
+                            <h3 style="text-align: center;">{{m.name}}</h3>
+                            <h5 style="text-align: center;">{{m.title}} </h5>
+                            <p style="color: coral; margin-top: 20px;">{{m.academic_qualification}} </p>
+                            <p>Email : {{m.email}}</p>
+
+
+                            <p>
+                                {{m.get_short_desc2 | safe}}
+                            </p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Developer Section -->
+
+        <section id="developer">
+            <h1 class="section-title">Our Developer Team</h1>
+            {% for dl in development_team_leader %}
+            {% if forloop.last %}
+            <div class="container mb-5">
+                <div class="row d-flex justify-content-center">
+                    <div class="col col-md-6 shadow-sm p-3">
+                        <img style="width: 30%; margin: auto; display: block; margin-bottom: 30px; border: 2px dashed rgb(73, 197, 255);"
+                             src="{{dl.photo.url}}" alt="">
+                        <h4 class="text-center">{{dl.name}}</h4>
+                        <h5 class="text-center text-warning">{{dl.title}}</h5>
+                        <p style="text-align: justify;">{{dl.desc | safe}} </p>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+
+
+            <div class="container">
+                <div class="row row-cols-1 row-cols-lg-4 g-2 g-lg-3">
+                    {% for dt in development_team %}
+                    <div class="col">
+                        <div class="p-3"><img class="developer-img" src="{{dt.photo.url}}" alt="">
+                            <h4 class="name">{{dt.name}}</h4>
+                            <p>{{dt.academic_qualification}}</p>
+                            <p class="experts">{{dt.get_short_desc3 | safe}}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </section>
+</main>
+
+
+<!-- ===========================================================Footer Start================================= -->
+
+{% include 'footer.html' %}
+
+
+<!-- =========================================== footer end================================= -->
+
+{% endblock %}

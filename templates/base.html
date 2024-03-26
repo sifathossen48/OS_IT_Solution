@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{%block title%}{%endblock%} - {{webinfo.site_name}}</title>
+    {% load static %}
+    <link rel="shortcut icon" href="{{webinfo.favicon.url}}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/css.css'%}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="{% static 'custom.js' %}"></script>
+</head>
+
+<body>
+<!-- massenger -->
+<!-- Messenger Chat plugin Code -->
+<div id="fb-root"></div>
+
+<!-- Your Chat plugin code -->
+<div id="fb-customer-chat" class="fb-customerchat">
+</div>
+
+<script>
+    var chatbox = document.getElementById('fb-customer-chat');
+    chatbox.setAttribute("page_id", "106572818431757");
+    chatbox.setAttribute("attribution", "biz_inbox");
+
+    window.fbAsyncInit = function () {
+      FB.init({
+        xfbml: true,
+        version: 'v11.0'
+      });
+    };
+
+    (function (d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+</script>
+{% block content %}
+{% endblock %}
+
+
+<script>
+    var url = 'https://wati-integration-service.clare.ai/ShopifyWidget/shopifyWidget.js?32129';
+    var s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.async = true;
+    s.src = url;
+    var options = {
+      "enabled": true,
+      "chatButtonSetting": {
+        "backgroundColor": "#4dc247",
+        "ctaText": "",
+        "borderRadius": "25",
+        "marginLeft": "0",
+        "marginBottom": "110",
+        "marginRight": "30",
+        "position": "right"
+      },
+      "brandSetting": {
+        "brandName": "OS IT Solutions LTD.",
+        "brandSubTitle": "Typically replies within a day",
+        "brandImg": "images/favicon.jpg",
+        "welcomeText": "Hi there!\nHow can I help you?",
+        "messageText": "",
+        "backgroundColor": "#0a5f54",
+        "ctaText": "Start Chat",
+        "borderRadius": "25",
+        "autoShow": false,
+        "phoneNumber": "8801911310766"
+      }
+    };
+    s.onload = function () {
+      CreateWhatsappChatWidget(options);
+    };
+    var x = document.getElementsByTagName('script')[0];
+    x.parentNode.insertBefore(s, x);
+
+</script>
+
+<script>
+    $('.brand-carousel').owlCarousel({
+      loop: true,
+      margin: 10,
+      autoplay: true,
+      responsive: {
+        0: {
+          items: 1
+        },
+        600: {
+          items: 3
+        },
+        1000: {
+          items: 5
+        }
+      }
+    })
+
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
+</script>
+</body>
+
+</html>

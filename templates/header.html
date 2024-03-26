@@ -1,0 +1,87 @@
+{% load static %}
+  <header>
+    <section id="navbar">
+      <!-- ----------------------------------nav start------------------ -->
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm bgcolor">
+        <div class="container">
+          <a class="navbar-brand" href="{% url 'home'%}"><img class="shadow-sm" src="{{webinfo.site_logo.url}}" alt=""> </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav " style="margin-left: 50px;">
+              <li class="nav-item">
+                <a class="nav-link active navbar-option" aria-current="page" href="{% url 'home'%}" id="x">Home</a>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle navbar-option x" href="#" id="navbarDropdownMenuLink" role="button"
+                  data-bs-toggle="dropdown" aria-expanded="false">
+                  Company
+                </a>
+                <ul class="dropdown-menu  pull-right dropdown-menu-color" aria-labelledby="navbarDropdownMenuLink">
+                  <li><a class="dropdown-item" href="{% url 'about-us' %}" id="x">About Us</a></li>
+                  <li><a class="dropdown-item" href="{% url 'why-us' %}" id="x">Why US ?</a></li>
+                  <li><a class="dropdown-item" href="{% url 'team' %}" id="x">Our Team</a></li>
+                  <li><a class="dropdown-item" href="{% url 'gallery'%}" id="x">Photo Gallery</a></li>
+                  <li><a class="dropdown-item" href="{% url 'join-us' %}" id="x">Career</a></li>
+                </ul>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle navbar-option x" href="#" id="navbarDropdownMenuLink" role="button"
+                  data-bs-toggle="dropdown" aria-expanded="false">
+                  Portfolio
+                </a>
+                <ul class="dropdown-menu dropdown-menu-color" aria-labelledby="navbarDropdownMenuLink">
+                  <li><a class="dropdown-item" href="{% url 'technology'%}" id="x">Technology</a></li>
+                  <li><a class="dropdown-item" href="{% url 'partner'%}" id="x">Partner & Alliances</a></li>
+                </ul>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Solution & Products </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#" id="x">Software Based
+                      Solution</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="erp.html" id="x">ERP Solutions</a></li>
+                      <li><a class="dropdown-item" href="ekyc.html" id="x">Digital eKYC</a></li>
+                      <li><a class="dropdown-item" href="hr.html" id="x">Corporate HR & Payroll</a></li>
+                      <li><a class="dropdown-item" href="app.html" id="x">Android App Development</a></li>
+                      <li><a class="dropdown-item" href="ios.html" id="x">iOS App Development</a></li>
+                      <li><a class="dropdown-item" href="web.html" id="x">Web Development</a></li>
+                      <li><a class="dropdown-item" href="marketing.html" id="x">Digital Marketing</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="http://google.com"
+                      id="x">Our Core Products</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="appoinment.html" id="x">Smart Appoinment & Visitor</a></li>
+                      <li><a class="dropdown-item" href="queue.html" id="x">Queue Management Solutions</a></li>
+                      <li><a class="dropdown-item" href="training.html" id="x">Online Training Management</a></li>
+                      <li><a class="dropdown-item" href="digitalLearning.html" id="x">Digital Education Solutions</a></li>
+                      <li><a class="dropdown-item" href="kiosk.html" id="x">KIOSK Based Solutions</a></li>
+                      <li><a class="dropdown-item" href="net.html" id="x">IT Support & Solutions</a></li>
+                      <li><a class="dropdown-item" href="products.html" id="x">Hardware and Accessories Support</a></li>
+                      <li><a class="dropdown-item" href="led.html" id="x">Cloud LED</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link navbar-option" href="{% url 'newsroom' %}" id="x">News Room</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link navbar-option" href="{% url 'contact-us' %}" id="x">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- ---------------------------nav end------------ -->
+    </section>
+  </header>

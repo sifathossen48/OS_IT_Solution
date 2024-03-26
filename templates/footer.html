@@ -1,0 +1,73 @@
+{% load static %}
+<section class="mt-2" style="background-color: rgb(15,26,67); border-radius: 20px; padding-bottom: 20px;">
+    <h2
+      style="text-align: center; color: white; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif!important; padding-top: 30px; padding-bottom: 30px;">
+      {{webinfo.footer_section_title}}</h2>
+    <div class="container">
+      <div class="row row-cols-1 row-cols-lg-3 g-2 g-lg-3">
+        <div class="col">
+          <div class="">
+            <img src="images/os logolatest.png" alt="">
+            <p class="mt-3 text-white">Hotline :</p>
+            <p class="mt-3 text-white"><img src="{% static 'icons/telephone.svg' %}" alt=""
+                style="width: 30px; margin-right: 20px;">{{webinfo.phone}}</p>
+            <p class="text-white"><img src="{% static 'icons/gmail.svg' %}" alt=""
+                style="width: 30px; margin-right: 20px;">{{webinfo.email}}</p>
+          </div>
+        </div>
+        <div class="col">
+          <div class="p-3">
+
+            <p>
+              <a class="footer-link" href="{% url 'about-us'%}">About Us</a> <br>
+              <a class="footer-link" href="{% url 'why-us' %}">Why Us</a> <br>
+              <a class="footer-link" href="{% url 'team'%}">Our Team</a> <br>
+              <a class="footer-link" href="products.html">Products</a> <br>
+              <a class="footer-link" href="{% url 'newsroom'%}">News Room</a> <br>
+              <a class="footer-link" href="{% url 'contact-us'%}">Contact US</a>
+            </p>
+            <p>
+              {% for sm in social %}
+              <a target="_blank" href="https://{{sm.link}}"><img
+                  src="{{sm.icon.url}}" alt="" class="footer-social-icons"></a>
+              {% endfor %}
+
+            </p>
+          </div>
+        </div>
+        <div class="col">
+          <div class="">
+            <h5 class="text-white">Bangladesh Office Location</h5>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.627222504481!2d90.40196741544405!3d23.760669194299698!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b947c5bab887%3A0x6770636383085e3!2zVG9vbCAmIFRlY2hub2xvZ3kgSW5zdGl0dXRlIChUVEkpLCBCSVRBQyAtIOCmn-CngeCmsiDgpo_gpqjgp43gpqEg4Kaf4KeH4KaV4Kao4KeL4Kay4Kac4Ka_IOCmh-CmqOCmuOCnjeCmn-Cmv-Cmn-Cmv-CmieCmnyAo4Kaf4Ka_4Kaf4Ka_4KaG4KaHKSwg4Kas4Ka_4Kaf4Ka-4KaV!5e0!3m2!1sen!2sbd!4v1625916064000!5m2!1sen!2sbd"
+              width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer style=" margin-top: 3px; background-color: rgb(15,26,67); border-radius: 20px;">
+    <section class="container ">
+      <h3
+        style="text-align: center; color: white; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif!important; padding-top: 30px; padding-bottom: 30px;">
+        {{webinfo.office_section_title}}</h3>
+      <div class="">
+        <div class="row row-cols-1 row-cols-lg-3 g-2 g-lg-3">
+          {% for o in offices %}
+          <div class="col">
+            <div class="p-3 border rounded" style="height: 300px; color: white;">
+              <img style="height: 50px; margin-top: 10px; margin-right: 10px;" src="{{o.flag.url}}"
+                alt="">
+              <h4 style="display: inline-block; color: white">{{o.country_base_office}}</h4>
+              <p class="" style="padding-top: 20px;">
+              {{o.detail | safe}}
+              </p>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        <p style="color: white; padding: 30px; text-align: center;">Copyright and Developed © {{webinfo.developed_year}} {{webinfo.site_name}}
+        </p>
+    </section>
+  </footer>
