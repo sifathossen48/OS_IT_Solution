@@ -3,8 +3,9 @@ from django.shortcuts import render, redirect
 from django.views import View
 from django.views.generic import TemplateView
 from osit import forms
+from osit.forms import CareerForm
 from osit.models import Slider, ConsultancyService, NewsRoom, Partner, Technology, Gallery, Website_Setting, \
-    Social_Media, TeamMember, Capabilities, Values, WhyChoseUs, Office, Service, Feature
+    Social_Media, TeamMember, Capabilities, Values, WhyChoseUs, Office, Service, Feature, CompanyQuality
 
 
 # Create your views here.
@@ -135,6 +136,7 @@ class AboutView(TemplateView):
         context['social'] = Social_Media.objects.filter(is_active=True)
         context['capability'] = Capabilities.objects.all()
         context['offices'] = Office.objects.all()[:3]
+        context['companyQuality'] = CompanyQuality.objects.all()[:3]
         context['softwareService'] = Service.objects.filter(is_software_based=True)
         context['deviceService'] = Service.objects.filter(is_device_based=True)
         return context

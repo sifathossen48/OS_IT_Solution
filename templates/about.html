@@ -13,24 +13,14 @@
         <section id="about-section-1">
             <div class="">
                 <div class="row row-cols-1 row-cols-lg-3 g-2 g-lg-3 mt-5 mb-5">
+                    {% for cq in companyQuality %}
                     <div class="col">
                         <div class="rounded"
                              style="text-align: center; font-size: 25px; color: white; background-color: rgb(15,26,67); padding: 20px;">
-                            Innovation
+                           {{cq.title}}
                         </div>
                     </div>
-                    <div class="col">
-                        <div class="rounded"
-                             style="text-align: center; font-size: 25px; color: white; background-color: rgb(15,26,67); padding: 20px;">
-                            Quality
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="rounded"
-                             style="text-align: center; font-size: 25px; color: white; background-color: rgb(15,26,67); padding: 20px;">
-                            Convenience
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
             </div>
@@ -60,7 +50,7 @@
 
         <!-- -------------------------------about section -3 start------------- -->
         <section>
-            <img src="about-images/Mission-Vision.png" alt="" style="width: 100%;">
+            <img src="{{webinfo.vision_and_mission_section_banner.url}}" alt="" style="width: 100%;">
         </section>
         <section style="background-color:rgb(15,26,67); padding-top: 50px; padding-bottom: 50px;">
             <div class="container">

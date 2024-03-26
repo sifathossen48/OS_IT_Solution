@@ -54,6 +54,7 @@ class Website_Setting(models.Model):
     team_page_title = models.CharField(max_length=30)
     team_page_banner = models.ImageField(upload_to='banner/')
     technology_page_title = models.CharField(max_length=30)
+    technology_icon = models.FileField(upload_to='icon/')
     capabilities_section_title = models.CharField(max_length=30)
     capabilities_section_banner = models.ImageField(upload_to='banner/')
     def __str__(self):
@@ -95,6 +96,11 @@ class Partner(models.Model):
     is_only_client = models.BooleanField(default=False)
     def __str__(self):
         return self.company_name
+
+class CompanyQuality(models.Model):
+    title = models.CharField(max_length=25)
+    def __str__(self):
+        return self.title
 
 class Technology(models.Model):
     tools_name = models.CharField(max_length=30)
@@ -187,6 +193,7 @@ class Office(models.Model):
     country_base_office = models.CharField(max_length=30)
     flag = models.FileField(upload_to='office/')
     detail = RichTextField(max_length=600)
+    google_map_link = models.CharField(max_length=1000)
     def __str__(self):
         return self.country_base_office
 

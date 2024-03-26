@@ -1,72 +1,77 @@
 {% extends 'base.html' %}
+{%block title%}{{webinfo.career_page_title}}{%endblock%}
 {% load static %}
 {% block content %}
 <!--header-->
-  {% include 'header.html' %}
-  <section class="container" style="padding-top: 25px; padding-bottom: 25px; background-color: rgb(169,198,205);">
+{% include 'header.html' %}
+<section class="container" style="padding-top: 25px; padding-bottom: 25px; background-color: rgb(169,198,205);">
     <div class="row g-0">
-      <div class="col-sm-6 col-md-6"><img src="{{webinfo.career_page_image.url}}" alt="" style="max-width: 100%;"></div>
-      <div class="col-6 col-md-6"><img src="{{webinfo.career_page_image_2.url}}" alt="" style="max-width: 100%;"></div>
+        <div class="col-sm-6 col-md-6"><img src="{{webinfo.career_page_image.url}}" alt="" style="max-width: 100%;">
+        </div>
+        <div class="col-6 col-md-6"><img src="{{webinfo.career_page_image_2.url}}" alt="" style="max-width: 100%;">
+        </div>
     </div>
-  </section>
+</section>
 
-  <section class="mt-5">
+<section class="mt-5">
     <div class="container shadow">
-      <div class="row row-cols-1 row-cols-lg-2 g-2 g-lg-3">
-        <div class="col">
-          <div class="p-3 "><img src="{{webinfo.career_form_image.url}}" alt=""
-              style="max-width: 100%; margin-left: auto; margin-right: auto; display: block;">
-          </div>
-        </div>
-        <div class="col">
-          <div class="p-3 "> <img src="{{webinfo.career_page_image_3.url}}" alt=""
-              style="width: 100px; margin-left: auto; margin-right: auto; display: block; padding-bottom: 25px;">
-
-            <form method="post" action="{% url 'career' %}" >
-              {% for message in messages %}
-                {{message}}
-              {% endfor %}
-              {% csrf_token %}
-              <div class="row g-3">
-                <div class="col">
-                  <div class="form-group">
-                    <input id="form_name" type="text" name="name" class="form-control roundcorners" placeholder="Enter Your Name">
-
-                  </div>
+        <div class="row row-cols-1 row-cols-lg-2 g-2 g-lg-3">
+            <div class="col">
+                <div class="p-3 "><img src="{{webinfo.career_form_image.url}}" alt=""
+                                       style="max-width: 100%; margin-left: auto; margin-right: auto; display: block;">
                 </div>
-                <div class="col">
-                  <div class="form-group">
-                    <input id="form_name" type="email" name="email" class="form-control roundcorners" placeholder="Enter Your Email">
+            </div>
+            <div class="col">
+                <div class="p-3 "><img src="{{webinfo.career_page_image_3.url}}" alt=""
+                                       style="width: 100px; margin-left: auto; margin-right: auto; display: block; padding-bottom: 25px;">
 
-                  </div>
+                    <form enctype="multipart/form-data" method="post" action="{% url 'career' %}">
+                        {% for message in messages %}
+                          {{message}}
+                        {% endfor %}
+                        {% csrf_token %}
+                        <div class="row g-3">
+                            <div class="col">
+                                <div class="form-group">
+                                    <input type="text" name="name" class="form-control roundcorners"
+                                           placeholder="Enter Your Name">
+
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <input type="email" name="email" class="form-control roundcorners"
+                                           placeholder="Enter Your Email">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-4">
+                            <label class="form-label">Message</label>
+                            <textarea style="width: 100%" name="message" rows="10" placeholder=""
+                                      class="placeholder"></textarea>
+                        </div>
+
+                        <div class="mb-3 mt-5">
+                            <label class="form-label">Upload Your CV</label>
+                            <input class="form-control" name="file" type="file">
+                        </div>
+
+                        <button style="margin-bottom: 25px;" type="submit" name="submit" class="btn btn-primary">
+                            Submit
+                        </button>
+                    </form>
+
                 </div>
-              </div>
-
-              <div class="mt-4">
-                <label class="form-label">Message</label>
-                <textarea style="width: 100%" name="message" id="message" rows="10" placeholder=""
-                  class="placeholder"></textarea>
-              </div>
-
-              <div class="mb-3 mt-5">
-                <label for="formFile" class="form-label">Upload Your CV</label>
-                <input class="form-control" name="file" type="file" id="formFile">
-              </div>
-
-              <button style="margin-bottom: 25px;" type="submit" name="submit" class="btn btn-primary">Submit</button>
-            </form>
-
-          </div>
+            </div>
         </div>
-      </div>
     </div>
-  </section>
+</section>
 
 
-
-  <!-- ===========================================================Footer Start================================= -->
+<!-- ===========================================================Footer Start================================= -->
 
 {% include 'footer.html' %}
 
-  <!-- =========================================== footer end================================= -->
+<!-- =========================================== footer end================================= -->
 {% endblock %}
