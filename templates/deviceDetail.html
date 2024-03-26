@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{%block title%}{{sw.title}}{%endblock%}
+{%block title%}{{dv.title}}{%endblock%}
 {% load static %}
 {% block content %}
 <!--header-->
@@ -7,21 +7,21 @@
 
     <main>
       <section id="web">
-        <h1 class="erp-title">{{sw.title}} <img class="web-icon" src="{{sw.icon.url}}" alt=""></h1>
+        <h1 class="erp-title">{{dv.title}} <img class="web-icon" src="{{dv.icon.url}}" alt=""></h1>
       </section>
         <section class="container">
 
             <p class="mt-5" >
-            {{sw.desc}}
+            {{dv.desc}}
             </p>
             <img style="margin-right: auto; margin-left: auto; display: block; max-width: 100%;"
-                src="{{sw.image.url}}" alt="">
+                src="{{dv.image.url}}" alt="">
 
-           <h1 class="section-title">{{sw.feature_title}}</h1>
+           <h1 class="section-title">{{dv.feature_title}}</h1>
 
             <div class="">
                 <div class="row row-cols-1 row-cols-lg-3 g-2 g-lg-3">
-                    {% for feature in sw.feature_set.all %}
+                    {% for feature in features %}
                     <div class="col">
                         <div class="p-3 border border-warning"><img
                                 style="width: 50px; margin-left: auto; margin-right: auto; display: block;"
@@ -35,7 +35,7 @@
             </div>
             <img class="mt-5 mb-5 shadow"
                 style="margin-right: auto; margin-left: auto; display: block; max-width: 100%;"
-                src="{{sw.image_2.url}}" alt="">
+                src="{{dv.image_2.url}}" alt="">
         </section>
 
         <div class="container mt-5 mb-5">
@@ -44,24 +44,24 @@
               <div class="col">
                   <div class="p-3">
                       <div class="d-grid gap-6">
-                     {{sw.learning_objective | safe }}
+                     {{dv.learning_objective | safe }}
                       </div>
                   </div>
               </div>
               <div class="col">
-                <div class="pt-4"><img style="max-width: 100%;" src="{{sw.image_3.url}}" alt=""></div>
+                <div class="pt-4"><img style="max-width: 100%;" src="{{dv.image_3.url}}" alt=""></div>
             </div>
           </div>
       </div>
         <div class="container mt-5 mb-5">
             <div class="row row-cols-1 row-cols-lg-2 g-2 g-lg-3">
                 <div class="col">
-                    <div class="pt-4"><img style="max-width: 100%;" src="{{sw.image_4.url}}" alt=""></div>
+                    <div class="pt-4"><img style="max-width: 100%;" src="{{dv.image_4.url}}" alt=""></div>
                 </div>
                 <div class="col">
                     <div class="p-3">
                         <div class="d-grid gap-6">
-                           {{sw.more | safe }}
+                           {{dv.more | safe }}
                         </div>
                     </div>
                 </div>

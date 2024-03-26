@@ -13,6 +13,8 @@ urlpatterns = [
     path('career/', views.CareerPageView.as_view(), name='join-us'),
     path("career", views.CareerView.as_view(), name='career'),
     path('team/', views.TeamView.as_view(), name='team'),
-    path('why_us/', views.WhyUsView.as_view(), name='why-us')
+    path('why_us/', views.WhyUsView.as_view(), name='why-us'),
+    path('softwareService/details/<int:sw_id>', views.softwareServiceDetailView.as_view(), name='softwareService'),
+    path('deviceService/details/<int:dv_id>', views.deviceServiceDetailView.as_view(), name='deviceService')
 
 ]

@@ -224,7 +224,7 @@
       <div class="row row-cols-1 row-cols-md-4 g-4">
         {% for software in softwareService %}
         <div class="col">
-          <a href="#" class="solutions">
+          <a href="{% url 'softwareService' sw_id=software.id %}" class="solutions">
             <div class="shadow-sm">
               <img src="{{software.cover_photo.url}}" class="card-img-top" alt="...">
               <div class="card-body">
@@ -252,12 +252,12 @@
         <div class="row row-cols-1 row-cols-md-4 g-4">
           {% for device in deviceService %}
           <div class="col">
-            <a href="#" class="solutions">
+            <a href="{% url 'deviceService' dv_id=device.id %}" class="solutions">
               <div class="card">
                 <img src="{{device.cover_photo.url}}" class="card-img-top" alt="...">
                 <div class="card-body">
-                  <p class="card-text mt-3 mb-3 text-center">Smart Appoinment & Visitor Management<img
-                      class="arrow-icon" src="solution&service/arrow.png" alt=""></p>
+                  <p class="card-text mt-3 mb-3 text-center">{{device.title}}<img
+                      class="arrow-icon" src="{% static 'solution&service/arrow.png' %}" alt=""></p>
                 </div>
               </div>
             </a>
