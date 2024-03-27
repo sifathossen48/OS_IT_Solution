@@ -3,10 +3,12 @@ from django.contrib import admin
 
 from osit.models import Slider, ConsultancyService, NewsRoom, Partner, Technology, Gallery, Website_Setting, \
     Social_Media, Contact, Career, TeamMember, Capabilities, Values, WhyChoseUs, Office, Service, Feature, \
-    CompanyQuality
+    CompanyQuality, AboutPageSetting, WhyChoseUsPageSetting
 
 # Register your models here.
 admin.site.register(Website_Setting)
+admin.site.register(AboutPageSetting)
+admin.site.register(WhyChoseUsPageSetting)
 admin.site.register(Social_Media)
 admin.site.register(Slider)
 admin.site.register(ConsultancyService)

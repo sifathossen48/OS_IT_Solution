@@ -9,10 +9,6 @@ class Website_Setting(models.Model):
     site_name = models.CharField(max_length=50)
     site_logo = models.ImageField(upload_to='logo/')
     favicon = models.ImageField(upload_to='favicon/')
-    about_of_company = models.TextField()
-    expertise_of_company = RichTextField()
-    profession_of_company = RichTextField()
-    profession_section_banner = models.ImageField(upload_to='banner/')
     phone = models.CharField(max_length=25)
     email = models.EmailField(max_length=50)
     developed_year = models.CharField(max_length=4)
@@ -23,16 +19,10 @@ class Website_Setting(models.Model):
     client_section_title = models.CharField(max_length=60)
     partner_section_title = models.CharField(max_length=60)
     partner_page_title = models.CharField(max_length=60)
+    partner_icon = models.FileField(upload_to='icon/')
     partner_page_banner = models.ImageField(upload_to='banner/')
     footer_section_title = models.CharField(max_length=30)
     office_section_title = models.CharField(max_length=30)
-    about_page_title = models.CharField(max_length=30)
-    about_page_banner = models.ImageField(upload_to='banner/')
-    why_us_page_title = models.CharField(max_length=30)
-    why_us_page_banner = models.ImageField(upload_to='banner/')
-    business_solution_section_title = models.CharField(max_length=100)
-    business_solution_section_desc = models.TextField(max_length=500)
-    business_solution_section_image = models.ImageField(upload_to='img/')
     career_page_title = models.CharField(max_length=30)
     career_page_image = models.ImageField(upload_to='banner/')
     career_page_image_2 = models.ImageField(upload_to='banner/')
@@ -44,6 +34,18 @@ class Website_Setting(models.Model):
     contact_page_banner = models.ImageField(upload_to='banner/')
     news_page_title = models.CharField(max_length=30)
     news_page_banner = models.ImageField(upload_to='banner/')
+    team_page_title = models.CharField(max_length=30)
+    team_page_banner = models.ImageField(upload_to='banner/')
+    technology_page_title = models.CharField(max_length=30)
+    technology_page_banner = models.ImageField(upload_to='banner/')
+    technology_icon = models.FileField(upload_to='icon/')
+    def __str__(self):
+        return self.site_name
+class AboutPageSetting(models.Model):
+    about_page_title = models.CharField(max_length=30)
+    about_page_banner = models.ImageField(upload_to='banner/')
+    about_of_company = models.TextField()
+    expertise_of_company = RichTextField()
     vision_and_mission_section_banner = models.ImageField(upload_to='banner/')
     vision_title = models.CharField(max_length=20)
     vision_image = models.ImageField(upload_to='img/')
@@ -51,16 +53,22 @@ class Website_Setting(models.Model):
     mission_title = models.CharField(max_length=20)
     mission_image = models.ImageField(upload_to='img/')
     mission_desc = models.TextField()
-    team_page_title = models.CharField(max_length=30)
-    team_page_banner = models.ImageField(upload_to='banner/')
-    technology_page_title = models.CharField(max_length=30)
-    technology_icon = models.FileField(upload_to='icon/')
     capabilities_section_title = models.CharField(max_length=30)
     capabilities_section_banner = models.ImageField(upload_to='banner/')
     def __str__(self):
-        return self.site_name
+        return self.about_page_title
 
-
+class WhyChoseUsPageSetting(models.Model):
+    why_us_page_title = models.CharField(max_length=30)
+    why_us_page_banner = models.ImageField(upload_to='banner/')
+    business_solution_section_title = models.CharField(max_length=100)
+    business_solution_section_desc = models.TextField(max_length=500)
+    business_solution_section_image = models.ImageField(upload_to='img/')
+    profession_of_company = RichTextField()
+    profession_section_banner = models.ImageField(upload_to='banner/')
+    values_section_title = models.CharField(max_length=30)
+    def __str__(self):
+        return self.why_us_page_title
 
 class Social_Media(models.Model):
     link = models.CharField(max_length=80)

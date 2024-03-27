@@ -5,7 +5,8 @@ from django.views.generic import TemplateView
 from osit import forms
 from osit.forms import CareerForm
 from osit.models import Slider, ConsultancyService, NewsRoom, Partner, Technology, Gallery, Website_Setting, \
-    Social_Media, TeamMember, Capabilities, Values, WhyChoseUs, Office, Service, Feature, CompanyQuality
+    Social_Media, TeamMember, Capabilities, Values, WhyChoseUs, Office, Service, Feature, CompanyQuality, \
+    AboutPageSetting, WhyChoseUsPageSetting
 
 
 # Create your views here.
@@ -133,6 +134,7 @@ class AboutView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['webinfo'] = Website_Setting.objects.last()
+        context['abouts'] = AboutPageSetting.objects.last()
         context['social'] = Social_Media.objects.filter(is_active=True)
         context['capability'] = Capabilities.objects.all()
         context['offices'] = Office.objects.all()[:3]
@@ -145,6 +147,7 @@ class WhyUsView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['webinfo'] = Website_Setting.objects.last()
+        context['whyus'] = WhyChoseUsPageSetting.objects.last()
         context['social'] = Social_Media.objects.filter(is_active=True)
         context['values'] = Values.objects.all()
         context['importantSupport'] = WhyChoseUs.objects.filter(is_important=True)

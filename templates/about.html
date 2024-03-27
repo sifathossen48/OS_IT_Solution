@@ -1,12 +1,12 @@
 {% extends 'base.html'%}
-{%block title%}{{webinfo.about_page_title}}{%endblock%}
+{%block title%}{{abouts.about_page_title}}{%endblock%}
 {% load static %}
 {% block content %}
 {% include 'header.html' %}
 
 <main>
-    <section id="about-us">
-        <h1 id="about-title">{{webinfo.about_page_title}}</h1>
+    <section id="about-us" style="background: rgba(8, 8, 8, 0.822) url('{{abouts.about_page_banner.url}}');  background-repeat: no-repeat; background-size: cover; background-position: center center; background-attachment: fixed; max-width: 100%; height: 80vh; background-blend-mode: darken;">
+        <h1 id="about-title">{{abouts.about_page_title}}</h1>
     </section>
 
     <section class="container">
@@ -35,7 +35,7 @@
                 <div class="row row-cols-1 row-cols-lg-1 g-2 g-lg-3">
                     <div class="col">
                         <div class="p-5" style="text-align: center; color: white; text-align: justify;">
-                            {{webinfo.about_of_company}}
+                            {{abouts.about_of_company}}
                         </div>
                     </div>
                 </div>
@@ -45,32 +45,32 @@
 
         <section class="container mt-5 mb-5">
             <h2 class="mb-5 text-warning">Expertise of {{webinfo.site_name}}</h2>
-            <p>{{webinfo.expertise_of_company | safe }}</p>
+            <p>{{abouts.expertise_of_company | safe }}</p>
         </section>
 
         <!-- -------------------------------about section -3 start------------- -->
         <section>
-            <img src="{{webinfo.vision_and_mission_section_banner.url}}" alt="" style="width: 100%;">
+            <img src="{{abouts.vision_and_mission_section_banner.url}}" alt="" style="width: 100%;">
         </section>
         <section style="background-color:rgb(15,26,67); padding-top: 50px; padding-bottom: 50px;">
             <div class="container">
                 <div class="row row-cols-1 row-cols-lg-2 g-2 g-lg-3">
                     <div class="col">
                         <div class="p-3">
-                            <h3 class="vission-mission-hedline">{{webinfo.vision_title}}</h3>
+                            <h3 class="vission-mission-hedline">{{abouts.vision_title}}</h3>
                             <p class="vission-mission-information">
-                             {{webinfo.vision_desc}}
+                             {{abouts.vision_desc}}
                             </p>
-                            <img src="{{webinfo.vision_image.url}}" alt="" class="vission-mission-images">
+                            <img src="{{abouts.vision_image.url}}" alt="" class="vission-mission-images">
                         </div>
                     </div>
                     <div class="col">
                         <div class="p-3">
-                            <h3 class="vission-mission-hedline">{{webinfo.mission_title}}</h3>
+                            <h3 class="vission-mission-hedline">{{abouts.mission_title}}</h3>
                             <p class="vission-mission-information mission-information">
-                               {{webinfo.mission_desc}}
+                               {{abouts.mission_desc}}
                             </p>
-                            <img src="{{webinfo.mission_image.url}}" alt="" class="vission-mission-images">
+                            <img src="{{abouts.mission_image.url}}" alt="" class="vission-mission-images">
                         </div>
                     </div>
                 </div>
@@ -82,8 +82,8 @@
         <!-- ==========================================About Our capabilitis============ -->
 
 
-        <img src="{{webinfo.capabilities_section_banner.url}}" alt="" style="max-width: 100%; margin-bottom: 50px;">
-        <h1 class="about-title">{{webinfo.capabilities_section_title}}</h1>
+        <img src="{{abouts.capabilities_section_banner.url}}" alt="" style="max-width: 100%; margin-bottom: 50px;">
+        <h1 class="about-title">{{abouts.capabilities_section_title}}</h1>
         <section id="our-capabilities-section">
 
             <h1 class="product-header" style="text-align: center; color: white; padding-bottom: 30px;">
