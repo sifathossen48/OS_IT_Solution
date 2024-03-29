@@ -93,26 +93,37 @@ class ContactView(View):
         else:
             messages.error(request,'Invalid! Please try again.')
         return redirect('/contact/')
-class CareerPageView(TemplateView):
-    template_name = 'career.html'
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['webinfo'] = Website_Setting.objects.last()
-        context['social'] = Social_Media.objects.filter(is_active=True)
-        context['offices'] = Office.objects.all()[:3]
-        context['softwareService'] = Service.objects.filter(is_software_based=True)
-        context['deviceService'] = Service.objects.filter(is_device_based=True)
-        return context
+# class CareerPageView(TemplateView):
+#     template_name = 'career.html'
+#     def get_context_data(self, **kwargs):
+#         context = super().get_context_data(**kwargs)
+#         context['webinfo'] = Website_Setting.objects.last()
+#         context['social'] = Social_Media.objects.filter(is_active=True)
+#         context['offices'] = Office.objects.all()[:3]
+#         context['softwareService'] = Service.objects.filter(is_software_based=True)
+#         context['deviceService'] = Service.objects.filter(is_device_based=True)
+#         return context
 
-class CareerView(View):
-    def post(self, request):
-        form = forms.CareerForm(data=request.POST)
+def career(request):
+    if request.method == 'POST':
+        form = CareerForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            messages.success(request,'Your data has been sent successfully.')
+            messages.success(request,'Data submit successfully') # Redirect to a success page
         else:
             messages.error(request,'Invalid! Please try again.')
-        return redirect('/career/')
+    else:
+        form = CareerForm()
+    context = {
+        'form': form,
+        'webinfo': Website_Setting.objects.last(),
+        'social': Social_Media.objects.filter(is_active=True),
+        'offices': Office.objects.all()[:3],
+        'softwareService': Service.objects.filter(is_software_based=True),
+        'deviceService': Service.objects.filter(is_device_based=True)
+
+    }
+    return render(request, 'career.html', context)
 
 class TeamView(TemplateView):
     template_name = 'team.html'
