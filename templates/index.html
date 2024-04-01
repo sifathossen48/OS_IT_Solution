@@ -300,22 +300,22 @@
     <!-- -----------------------------News Rooms start--------------- -->
 
     <section class="container" id="">
-      <h1 class="section-title">News Room</h1>
+      <h1 class="section-title">{{webinfo.news_page_title}}</h1>
       <div class="row row-cols-1 row-cols-md-4 g-2">
          {% for nr in newsRooms %}
         <div class="col">
           <div class="card" style="height: 525px;">
             <img src="{{nr.image.url}}" class="card-img-top" alt="...">
             <div class="card-body">
-              <p style="text-align: justify;">{{nr.desc}}</p>
+              <p style="text-align: justify;">{{nr.short_desc}}...</p>
             </div>
           </div>
         </div>
         {% endfor %}
       </div>
 
-      <h3 style="text-align: center; margin-top: 40px; font-size: 16px;"><a href="newsroom.html"
-          class="know-more-option"><img style="margin-right: 20px;" src="icons/know more.svg" alt=""> Explore more</a>
+      <h3 style="text-align: center; margin-top: 40px; font-size: 16px;"><a href="{% url 'newsroom' %}"
+          class="know-more-option"><img style="margin-right: 20px;" src="{% static 'icons/know more.svg' %}" alt=""> Explore more</a>
       </h3>
     </section>
     <!-- ---------------------news rooms end---------------- -->
@@ -324,12 +324,12 @@
 
 
     <section>
-      <h1 class="section-title">Key Client Portfolio</h1>
+      <h1 class="section-title">{{webinfo.client_section_title}}</h1>
       <div class="container brand-carousel section-padding owl-carousel">
         {% for client in clients %}
         <div class="single-logo">
           <img class="" src="{{client.company_logo.url}}" alt=""
-            style="width: 50px; margin-left: auto;margin-right: auto; display: block;">
+            style="width: 150px; margin-left: auto;margin-right: auto; display: block;">
         </div>
         {% endfor %}
       </div>
@@ -341,7 +341,7 @@
 
     <section>
       <section>
-        <h1 class="section-title">Partner & Alliances</h1>
+        <h1 class="section-title">{{webinfo.partner_section_title}}</h1>
         <div class="container brand-carousel section-padding owl-carousel">
           {% for p in partners %}
           <div class="single-logo">
@@ -360,7 +360,7 @@
       <!-- ----------------tool & technology start------------------ -->
       <section class="pt-4 mt-5">
 
-        <h1 class="section-title">Tools & Technology</h1>
+        <h1 class="section-title">{{webinfo.technology_page_title}}</h1>
         <div class="container mb-5">
           <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3 h-100">
             {% for tech in techs %}
@@ -386,9 +386,7 @@
               <div class="modal-content">
                 <div class="mt-4 ms-4">
                   <h4 class="border-start border-5 border-warning container"
-                    style="padding-bottom: 15px; padding-top: 15px; padding-left: 20px; color: rgb(26, 112, 138);">Tools
-                    &
-                    Technology</h4>
+                    style="padding-bottom: 15px; padding-top: 15px; padding-left: 20px; color: rgb(26, 112, 138);">{{webinfo.technology_page_title}}</h4>
                 </div>
                 <div class="modal-body">
                   <div class="container mb-5">

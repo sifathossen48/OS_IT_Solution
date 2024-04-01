@@ -19,12 +19,16 @@
                             <div class="carousel-item active">
                                 <img src="{{nr.image.url}}" class="d-block w-100" alt="...">
                             </div>
+                            {% if nr.image_2 %}
                             <div class="carousel-item">
                                 <img src="{{nr.image_2.url}}" class="d-block w-100" alt="...">
                             </div>
+                            {% endif %}
+                            {% if nr.image_3 %}
                             <div class="carousel-item">
                                 <img src="{{nr.image_3.url}}" class="d-block w-100" alt="...">
                             </div>
+                            {% endif %}
                         </div>
                     </div>
                     <div class="card-body">

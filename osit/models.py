@@ -91,11 +91,13 @@ class ConsultancyService(models.Model):
 class NewsRoom(models.Model):
     event = models.CharField(max_length=50)
     image = models.ImageField(upload_to='NewsRoom/')
-    image_2 = models.ImageField(upload_to='NewsRoom/')
-    image_3 = models.ImageField(upload_to='NewsRoom/')
+    image_2 = models.ImageField(upload_to='NewsRoom/', null=True,blank=True)
+    image_3 = models.ImageField(upload_to='NewsRoom/', null=True,blank=True)
     desc = models.TextField(max_length=300)
     def __str__(self):
         return self.event
+    def short_desc(self):
+        return self.desc[:250]
 
 
 class Partner(models.Model):
@@ -131,7 +133,7 @@ class Capabilities(models.Model):
 
 class Values(models.Model):
     title = models.CharField(max_length=30)
-    desc = models.TextField()
+    desc = models.TextField(max_length=150)
     icon = models.FileField(upload_to='icon/')
     def __str__(self):
         return self.title
@@ -160,6 +162,7 @@ class TeamMember(models.Model):
     is_management_team_member = models.BooleanField(default=False)
     is_development_team_leader = models.BooleanField(default=False)
     is_development_team_member = models.BooleanField(default=False)
+    is_draft = models.BooleanField(default=False)
 
     @property
     def get_short_desc(self):
@@ -210,19 +213,21 @@ class Service(models.Model):
     cover_photo = models.FileField(upload_to='service/')
     icon = models.FileField(upload_to='service/')
     desc = models.TextField()
-    image = models.ImageField(upload_to='services')
-    image_2 = models.FileField(upload_to='service')
-    feature_title = models.CharField(max_length=200)
-    learning_objective = RichTextField()
-    image_3 = models.FileField(upload_to='service/')
-    image_4 = models.FileField(upload_to='service/')
-    more = RichTextField()
+    image = models.FileField(upload_to='services/', null=True, blank=True)
+    image_2 = models.FileField(upload_to='service/', null=True,blank=True)
+    feature_title = models.CharField(max_length=200, null=True, blank=True)
+    learning_objective = RichTextField(null=True,blank=True)
+    image_3 = models.FileField(upload_to='service/', null=True,blank=True)
+    image_4 = models.FileField(upload_to='service/', null=True,blank=True)
+    more = RichTextField(null=True,blank=True)
     is_software_based = models.BooleanField(default=False)
     is_device_based = models.BooleanField(default=False)
     def __str__(self):
         return self.title
     def get_short_desc(self):
         return self.desc[:105]
+
+
 
 class Feature(models.Model):
     title = models.CharField(max_length=50)
