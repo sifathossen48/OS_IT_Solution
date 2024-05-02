@@ -1,5 +1,5 @@
 {% load static %}
-<section class="mt-2" style="background-color: rgb(15,26,67); border-radius: 20px; padding-bottom: 20px;">
+<section class="mt-4" style="background-color: rgb(15,26,67); border-radius: 20px; padding-bottom: 20px;">
     <h2
       style="text-align: center; color: white; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif!important; padding-top: 30px; padding-bottom: 30px;">
       {{webinfo.footer_section_title}}</h2>
@@ -23,7 +23,7 @@
               <a class="footer-link" href="{% url 'why-us' %}">Why Us</a> <br>
               <a class="footer-link" href="{% url 'team'%}">Our Team</a> <br>
               {% for device in deviceService %}
-              {% if forloop.last %}
+              {% if forloop.first %}
               <a class="footer-link" href="{% url 'deviceService' dv_id=device.id %}">{{device.title}}</a> <br>
               {% endif %}
               {% endfor %}
@@ -39,20 +39,21 @@
             </p>
           </div>
         </div>
-        {% for o in offices %}
-        {% if forloop.first %}
-        <div class="col">
-          <div class="">
-            <h5 class="text-white">{{o.country_base_office}} Location</h5>
-            <iframe
-              src="https://{{o.google_map_link}}"
-              width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-          </div>
+      <div class="col">
+        <div style="margin-left: 125px;">
+          <div class="row"  >
+            <h2 style="color: white;">Member of:</h2>
+           </div>
+             {% for m in membership %}
+             <div class="row">
+               <img src="{{m.logo.url}}" alt="" style="height: 100px; width: 200px;">
+             </div>
+             {% endfor %}
         </div>
-        {% endif %}
-        {% endfor %}
+      </div>
       </div>
     </div>
+   
   </section>
 
   <footer style=" margin-top: 3px; background-color: rgb(15,26,67); border-radius: 20px;">
@@ -60,8 +61,8 @@
       <h3
         style="text-align: center; color: white; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif!important; padding-top: 30px; padding-bottom: 30px;">
         {{webinfo.office_section_title}}</h3>
-      <div class="">
-        <div class="row row-cols-1 row-cols-lg-3 g-2 g-lg-3">
+      <div class="row">
+        <div class="row row-cols-2 row-cols-lg-3 g-1 g-lg-2">
           {% for o in offices %}
           <div class="col">
             <div class="p-3 border rounded" style="height: 300px; color: white;">
@@ -74,8 +75,22 @@
             </div>
           </div>
           {% endfor %}
+          {% for o in offices %}
+          {% if forloop.first %}
+          <div class="col">
+            <div class="p-3 border rounded" style="height: 300px; color: white;">
+              <h5 class="text-white">{{o.country_base_office}} Location</h5>
+              <iframe
+                src="https://{{o.google_map_link}}"
+                width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+          </div>
+          {% endif %}
+          {% endfor %}
+          
         </div>
         <p style="color: white; padding: 30px; text-align: center;">Copyright and Developed © {{webinfo.developed_year}} {{webinfo.site_name}}
         </p>
+      </div>
     </section>
   </footer>

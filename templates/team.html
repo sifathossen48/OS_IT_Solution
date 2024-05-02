@@ -14,7 +14,7 @@
 
     <!-- ------------------------------------------------------ -->
 
-    <section class="">
+
 
         <section class="mt-5 container">
             <div>
@@ -78,9 +78,9 @@
             </div>
         </section>
         <!-- ------------------------------------------------------ -->
-        <h1 class="section-title">Management Team</h1>
+       
         <section class="container mt-5 shadow-sm p-5 rounded">
-
+            <h1 class="section-title">Management Team</h1>
             <div class="">
                 <div class="row row-cols-1 row-cols-lg-2 g-2 g-lg-3">
                     {% for m in management_team %}
@@ -107,7 +107,7 @@
 
         <!-- Developer Section -->
 
-        <section id="developer">
+        {% comment %} <section id="developer">
             <h1 class="section-title">Our Developer Team</h1>
             {% for dl in development_team_leader %}
             {% if forloop.last %}
@@ -130,18 +130,113 @@
                 <div class="row row-cols-1 row-cols-lg-4 g-2 g-lg-3">
                     {% for dt in development_team %}
                     <div class="col">
-                        <div class="p-3"><img class="developer-img" src="{{dt.photo.url}}" alt="">
+                        <div class="p-3"><img class="developer-img" src="{{dt.photo.url}}" alt="" style="height: 150px; width: 200px;">
                             <h4 class="name">{{dt.name}}</h4>
                             <p>{{dt.academic_qualification}}</p>
-                            <p class="experts">{{dt.get_short_desc3 | safe}}</p>
+                            <p class="experts">{{dt.get_short_desc2 | safe}}</p>
                         </div>
                     </div>
                     {% endfor %}
 
                 </div>
             </div>
+            
+        </section> {% endcomment %}
+
+
+
+
+
+
+        <section id="developer">
+            <h1 class="section-title">Our Developer Team</h1>
+            {% for dl in development_team_leader %}
+            {% if forloop.last %}
+            <div class="container mb-5">
+              <div class="row d-flex justify-content-center">
+                <div class="col col-md-6 shadow-sm p-3">
+                  <img style="width: 30%; margin: auto; display: block; margin-bottom: 30px; border: 2px dashed rgb(73, 197, 255);" src="{{dl.photo.url}}" alt="">
+                  <h4 class="text-center">{{dl.name}}</h4>
+                  <h5 class="text-center text-warning">{{dl.title}}</h5>
+                  <p style="text-align: justify;">{{dl.desc | safe}}</p>
+                </div>
+              </div>
+            </div>
+            
+            {% endif %}
+            {% endfor %}
+            <div class="container">
+              <div class="row row-cols-1 row-cols-lg-4 g-2 g-lg-3">
+                {% for dt in development_team %}
+                <div class="col">
+                  <div class="p-3"><img class="developer-img" src="{{dt.photo.url}}" alt="">
+                    <h4 class="name">{{dt.name}}</h4>
+                    <p>{{dt.academic_qualification}}</p>
+                    <p class="experts">{{dt.get_short_desc2 | safe}}</p>
+                  </div>
+                </div>
+                {% endfor %}
+              
+                
+             
+    
+              </div>
+            </div>
         </section>
-</main>
+
+          
+
+        <section id="developer">
+            <h1 class="section-title">Our Developer Team</h1>
+            
+            <div class="container">
+              <div class="row row-cols-1 row-cols-lg-4 g-2 g-lg-3">
+                <div class="col">
+                  <div class="p-3"><img class="developer-img" src="our-team/developer/sadman.png" alt="">
+                    <h4 class="name">Shadman Al Islam</h4>
+                    <p>B.Sc. in Computer Science & Engineering (CSE), IUB</p>
+                    <p class="experts">Shadman Al Islam is a web developer at OSIT Solutions Ltd who is well experienced in
+                      HTML, CSS,
+                      Bootstrap, Javascript, React Js, Python, Django.</p>
+                  </div>
+                </div>
+                
+                <div class="col">
+                  <div class="p-3"><img class="developer-img" src="our-team/developer/shamim.png" alt="">
+                    <h4 class="name">Shamim Ovi</h4>
+                    <p>B.Sc. in Computer Science & Engineering (CSE), IUB</p>
+                    <p class="experts">I am shamim ovi working as a Young profession at OSIT solution. I have skill in HTML,
+                      CSS, Bootstrap,
+                      javascript, WordPress, PHP</p>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="p-3"><img class="developer-img" src="our-team/developer/rohan.png" alt="">
+                    <h4 class="name">Rohan Khan</h4>
+                    <p>B.Sc. in Computer Science & Engineering (CSE), IUB</p>
+                    <p class="experts">I am a web application developer. I have skills of HTML, CSS, bootstrap, JavaScript,
+                      jQuery, Ajax, PHP and Laravel framework.</p>
+                  </div>
+                </div>
+                
+                <div class="col">
+                  <div class="p-3"><img class="developer-img" src="our-team/developer/yousuf.png" alt="">
+                    <h4 class="name">Mohammad Yousuf</h4>
+                    <p>B.Sc. in Computer Science & Engineering (CSE), IUB</p>
+                    <p class="experts">I am Mohammad Yousuf currently working as a Young Professional at OS IT Solutions
+                      Ltd. I have skills
+                      in HTML, CSS, Bootstrap, JavaScript, ReactJs, PHP and Laravel.</p>
+                  </div>
+                </div>
+    
+              </div>
+            </div>
+          </section>
+        
+
+
+
+        </main>
 
 
 <!-- ===========================================================Footer Start================================= -->

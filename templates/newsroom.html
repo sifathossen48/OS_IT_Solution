@@ -9,31 +9,34 @@
     <section id="news" style="    background: rgba(0, 0, 0, 0.822) url('{{webinfo.news_page_banner.url}}'); background-repeat: no-repeat;background-size: cover; background-position: center center; background-attachment: fixed; max-width: 100%; height: 60vh;background-blend-mode: darken;">
         <h1 class="erp-title">{{webinfo.news_page_title}}
     </section>
-    <section class="container mt-5">
+    {% comment %} hiring {% endcomment %}
+    <section class="container mt-5 mb-2">
+       <h1 style="text-align: center;">Hiring Activity</h1> 
+       <hr style="color: antiquewhite;">
         <div class="row row-cols-1 row-cols-md-3 g-4">
-            {% for nr in newsRooms %}
+            {% for h in hiring %}
             <div class="col" style="height: 550px;">
                 <div class="card h-100">
                     <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="{{nr.image.url}}" class="d-block w-100" alt="...">
+                                <img src="{{h.image.url}}" class="d-block w-100" alt="...">
                             </div>
-                            {% if nr.image_2 %}
+                            {% if h.image_2 %}
                             <div class="carousel-item">
-                                <img src="{{nr.image_2.url}}" class="d-block w-100" alt="...">
+                                <img src="{{h.image_2.url}}" class="d-block w-100" alt="...">
                             </div>
                             {% endif %}
-                            {% if nr.image_3 %}
+                            {% if h.image_3 %}
                             <div class="carousel-item">
-                                <img src="{{nr.image_3.url}}" class="d-block w-100" alt="...">
+                                <img src="{{h.image_3.url}}" class="d-block w-100" alt="...">
                             </div>
                             {% endif %}
                         </div>
                     </div>
                     <div class="card-body">
                         <p>
-                        <p style="text-align: justify;">{{nr.desc}}</p>
+                        <p style="text-align: justify;">{{h.desc}}</p>
                         </p>
                     </div>
                 </div>
@@ -43,7 +46,195 @@
 
         </div>
     </section>
-</main>
+    {% comment %} MOU Signing {% endcomment %}
+    <section class="container mt-5 mb-2 ">
+        <h1 style="text-align: center;">MOU Signing Activity</h1> 
+        <hr style="color: antiquewhite;">
+         <div class="row row-cols-1 row-cols-md-3 g-4">
+             {% for m in MOU_SignIn %}
+             <div class="col" style="height: 550px;">
+                 <div class="card h-100">
+                     <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                         <div class="carousel-inner">
+                             <div class="carousel-item active">
+                                 <img src="{{m.image.url}}" class="d-block w-100" alt="...">
+                             </div>
+                             {% if m.image_2 %}
+                             <div class="carousel-item">
+                                 <img src="{{m.image_2.url}}" class="d-block w-100" alt="...">
+                             </div>
+                             {% endif %}
+                             {% if m.image_3 %}
+                             <div class="carousel-item">
+                                 <img src="{{m.image_3.url}}" class="d-block w-100" alt="...">
+                             </div>
+                             {% endif %}
+                         </div>
+                     </div>
+                     <div class="card-body">
+                         <p>
+                         <p style="text-align: justify;">{{m.desc}}</p>
+                         </p>
+                     </div>
+                 </div>
+             </div>
+             {% endfor %}
+ 
+ 
+         </div>
+     </section>
+
+     {% comment %} Nasa App Activity Challange {% endcomment %}
+     <section class="container mt-5 mb-2 ">
+        <h1 style="text-align: center;">Nasa App Activity</h1> 
+        <hr style="color: antiquewhite;">
+         <div class="row row-cols-1 row-cols-md-3 g-4">
+             {% for n in Nasa_App %}
+             <div class="col" style="height: 550px;">
+                 <div class="card h-100">
+                     <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                         <div class="carousel-inner">
+                             <div class="carousel-item active">
+                                 <img src="{{n.image.url}}" class="d-block w-100" alt="...">
+                             </div>
+                             {% if n.image_2 %}
+                             <div class="carousel-item">
+                                 <img src="{{n.image_2.url}}" class="d-block w-100" alt="...">
+                             </div>
+                             {% endif %}
+                             {% if n.image_3 %}
+                             <div class="carousel-item">
+                                 <img src="{{n.image_3.url}}" class="d-block w-100" alt="...">
+                             </div>
+                             {% endif %}
+                         </div>
+                     </div>
+                     <div class="card-body">
+                         <p>
+                         <p style="text-align: justify;">{{n.desc}}</p>
+                         </p>
+                     </div>
+                 </div>
+             </div>
+             {% endfor %}
+ 
+ 
+         </div>
+     </section>
+    {% comment %} Support Activity{% endcomment %}
+    <section class="container mt-5 mb-2 ">
+        <h1 style="text-align: center;">Support Activity</h1> 
+        <hr style="color: antiquewhite;">
+         <div class="row row-cols-1 row-cols-md-3 g-4">
+             {% for s in Support_Activity %}
+             <div class="col" style="height: 550px;">
+                 <div class="card h-100">
+                     <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                         <div class="carousel-inner">
+                             <div class="carousel-item active">
+                                 <img src="{{s.image.url}}" class="d-block w-100" alt="...">
+                             </div>
+                             {% if s.image_2 %}
+                             <div class="carousel-item">
+                                 <img src="{{s.image_2.url}}" class="d-block w-100" alt="...">
+                             </div>
+                             {% endif %}
+                             {% if s.image_3 %}
+                             <div class="carousel-item">
+                                 <img src="{{s.image_3.url}}" class="d-block w-100" alt="...">
+                             </div>
+                             {% endif %}
+                         </div>
+                     </div>
+                     <div class="card-body">
+                         <p>
+                         <p style="text-align: justify;">{{s.desc}}</p>
+                         </p>
+                     </div>
+                 </div>
+             </div>
+             {% endfor %}
+ 
+ 
+         </div>
+     </section>
+    
+      {% comment %} Team Activity {% endcomment %}
+      <section class="container mt-5 mb-2 ">
+        <h1 style="text-align: center;">Team Activity</h1> 
+        <hr style="color: antiquewhite;">
+         <div class="row row-cols-1 row-cols-md-3 g-4">
+             {% for t in Team_Activity %}
+             <div class="col" style="height: 550px;">
+                 <div class="card h-100">
+                     <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                         <div class="carousel-inner">
+                             <div class="carousel-item active">
+                                 <img src="{{t.image.url}}" class="d-block w-100" alt="...">
+                             </div>
+                             {% if t.image_2 %}
+                             <div class="carousel-item">
+                                 <img src="{{t.image_2.url}}" class="d-block w-100" alt="...">
+                             </div>
+                             {% endif %}
+                             {% if t.image_3 %}
+                             <div class="carousel-item">
+                                 <img src="{{t.image_3.url}}" class="d-block w-100" alt="...">
+                             </div>
+                             {% endif %}
+                         </div>
+                     </div>
+                     <div class="card-body">
+                         <p>
+                         <p style="text-align: justify;">{{t.desc}}</p>
+                         </p>
+                     </div>
+                 </div>
+             </div>
+             {% endfor %}
+ 
+ 
+         </div>
+     </section>
+
+      {% comment %} Job Fair Activity {% endcomment %}
+      <section class="container mt-5 mb-2 ">
+        <h1 style="text-align: center;">Job Fair Activity</h1> 
+        <hr style="color: antiquewhite;">
+         <div class="row row-cols-1 row-cols-md-3 g-4">
+             {% for j in Job_Fair %}
+             <div class="col" style="height: 550px;">
+                 <div class="card h-100">
+                     <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                         <div class="carousel-inner">
+                             <div class="carousel-item active">
+                                 <img src="{{j.image.url}}" class="d-block w-100" alt="...">
+                             </div>
+                             {% if j.image_2 %}
+                             <div class="carousel-item">
+                                 <img src="{{j.image_2.url}}" class="d-block w-100" alt="...">
+                             </div>
+                             {% endif %}
+                             {% if j.image_3 %}
+                             <div class="carousel-item">
+                                 <img src="{{j.image_3.url}}" class="d-block w-100" alt="...">
+                             </div>
+                             {% endif %}
+                         </div>
+                     </div>
+                     <div class="card-body">
+                         <p>
+                         <p style="text-align: justify;">{{j.desc}}</p>
+                         </p>
+                     </div>
+                 </div>
+             </div>
+             {% endfor %}
+ 
+ 
+         </div>
+     </section>
+    </main>
 
 <!-- ===========================================================Footer Start================================= -->
 

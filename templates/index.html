@@ -189,7 +189,10 @@
             <div data-to="50% 50%" data-t="12"
               style="left:690px;top:140px;width:700px;height:350px;position:absolute;color:white;line-height:1.2;letter-spacing:0.1em;">
               <h1 style="font-size: 40px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
-                {{s.title}}</h1>
+                {% if s.title %}
+                {{s.title}}
+                {% endif %}
+              </h1>
               <p>
               <h5>{{s.desc}}</h5>
               </p>
@@ -226,7 +229,7 @@
         <div class="col">
           <a href="{% url 'softwareService' sw_id=software.id %}" class="solutions">
             <div class="shadow-sm">
-              <img src="{{software.cover_photo.url}}" class="card-img-top" alt="...">
+              <img src="{{software.cover_photo.url}}" class="card-img-top" alt="..." style="height: 200px;">
               <div class="card-body">
                 <h5 class="card-title fw-bold">{{software.title}}</h5>
                 <p class="card-text">{{software.get_short_desc}}.. <img class="arrow-icon" src="{% static 'solution&service/right-arrow.png'%}" alt=""></p>
@@ -254,7 +257,7 @@
           <div class="col">
             <a href="{% url 'deviceService' dv_id=device.id %}" class="solutions">
               <div class="card">
-                <img src="{{device.cover_photo.url}}" class="card-img-top" alt="...">
+                <img src="{{device.cover_photo.url}}" class="card-img-top" alt="..." style="height: 150px;">
                 <div class="card-body">
                   <p class="card-text mt-3 mb-3 text-center">{{device.title}}<img
                       class="arrow-icon" src="{% static 'solution&service/arrow.png' %}" alt=""></p>

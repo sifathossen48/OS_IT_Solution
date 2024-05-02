@@ -78,11 +78,32 @@
         </section>
         <!-- -------------------------------about section -3 end--------------- -->
 
+{% comment %} Award & Certificate {% endcomment %}
+       <h1 class="about-title mt-5">  {{webinfo.award_section_title}}</h1>
+        <section id="our-capabilities-section">
 
+            <h1 class="product-header" style="text-align: center; color: black; padding-bottom: 30px; ;">
+             
+            </h1>
+            <div class="container">
+                <div class="row row-cols-1 row-cols-lg-3 g-2 g-lg-3">
+                    {% for a in ac %}
+                    <div class="col mb-5">
+                        <div class="p-3 border-end"><img class="capabilitis-image"
+                                                         src="{{a.image.url}}"
+                                                         alt="" style="height: 250px; width: 250px; padding-bottom: 20px;">
+    
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </section>
         <!-- ==========================================About Our capabilitis============ -->
 
 
-        <img src="{{abouts.capabilities_section_banner.url}}" alt="" style="max-width: 100%; margin-bottom: 50px;">
+        <img src="{{abouts.capabilities_section_banner.url}}" alt="" style="max-width: 100%; margin-bottom: 50px; margin-top: 50px;">
         <h1 class="about-title">{{abouts.capabilities_section_title}}</h1>
         <section id="our-capabilities-section">
 

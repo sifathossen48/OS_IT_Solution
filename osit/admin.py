@@ -1,9 +1,9 @@
 from ckeditor.widgets import CKEditorWidget
 from django.contrib import admin
 
-from osit.models import Slider, ConsultancyService, NewsRoom, Partner, Technology, Gallery, Website_Setting, \
+from osit.models import Award_And_Certificate, Slider, ConsultancyService, NewsRoom, Partner, Technology, Gallery, Website_Setting, \
     Social_Media, Contact, Career, TeamMember, Capabilities, Values, WhyChoseUs, Office, Service, Feature, \
-    CompanyQuality, AboutPageSetting, WhyChoseUsPageSetting
+    CompanyQuality, AboutPageSetting, WhyChoseUsPageSetting, Membership
 
 # Register your models here.
 admin.site.register(Website_Setting)
@@ -26,3 +26,5 @@ admin.site.register(Office)
 admin.site.register(Service)
 admin.site.register(Feature)
 admin.site.register(CompanyQuality)
+admin.site.register(Membership)
+admin.site.register(Award_And_Certificate)

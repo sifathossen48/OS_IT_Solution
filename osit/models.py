@@ -39,6 +39,7 @@ class Website_Setting(models.Model):
     technology_page_title = models.CharField(max_length=30)
     technology_page_banner = models.ImageField(upload_to='banner/')
     technology_icon = models.FileField(upload_to='icon/')
+    award_section_title = models.CharField(max_length=30)
     def __str__(self):
         return self.site_name
 class AboutPageSetting(models.Model):
@@ -77,11 +78,14 @@ class Social_Media(models.Model):
     def __str__(self):
         return self.link
 class Slider(models.Model):
-    title = models.CharField(max_length=100)
+    name = models.CharField(max_length=20)
+    title = models.CharField(max_length=100, null=True, blank=True)
     desc = models.TextField(null=True,blank=True)
     image = models.ImageField(upload_to='slider/')
     def __str__(self):
-        return self.title
+        return self.name
+   
+    
 class ConsultancyService(models.Model):
     icon = models.FileField(upload_to='icon/')
     title = models.CharField(max_length=40)
@@ -93,12 +97,18 @@ class NewsRoom(models.Model):
     image = models.ImageField(upload_to='NewsRoom/')
     image_2 = models.ImageField(upload_to='NewsRoom/', null=True,blank=True)
     image_3 = models.ImageField(upload_to='NewsRoom/', null=True,blank=True)
-    desc = models.TextField(max_length=300)
+    desc = models.TextField(max_length=300,null=True,blank=True)
+    hiring_Activity = models.BooleanField(default=False)
+    MOU_SignIn_Activity = models.BooleanField(default=False)
+    Nasa_App_Activity = models.BooleanField(default=False)
+    Support_Activity = models.BooleanField(default=False)
+    Team_Activity = models.BooleanField(default=False)
+    Job_Fair_Activity = models.BooleanField(default=False)
+
     def __str__(self):
         return self.event
     def short_desc(self):
         return self.desc[:250]
-
 
 class Partner(models.Model):
     company_name = models.CharField(max_length=30)
@@ -162,6 +172,8 @@ class TeamMember(models.Model):
     is_management_team_member = models.BooleanField(default=False)
     is_development_team_leader = models.BooleanField(default=False)
     is_development_team_member = models.BooleanField(default=False)
+    is_ui_team_member = models.BooleanField(default=False)
+    is_digital_marketing_team_member = models.BooleanField(default=False)
     is_draft = models.BooleanField(default=False)
 
     @property
@@ -235,9 +247,14 @@ class Feature(models.Model):
     service = models.ForeignKey(Service, on_delete=models.CASCADE)
     def __str__(self):
         return self.title
+class Membership(models.Model):
+    title = models.CharField(max_length=30)
+    logo = models.ImageField(upload_to='membership/')
+    def __str__(self):
+        return self.title
 
-
-
-
-
-
+class Award_And_Certificate(models.Model):
+    title = models.CharField(max_length=60)
+    image = models.ImageField(upload_to='certificate/')
+    def __str__(self):
+        return self.title

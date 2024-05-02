@@ -4,7 +4,7 @@ from django.views import View
 from django.views.generic import TemplateView
 from osit import forms
 from osit.forms import CareerForm
-from osit.models import Slider, ConsultancyService, NewsRoom, Partner, Technology, Gallery, Website_Setting, \
+from osit.models import Award_And_Certificate, Membership, Slider, ConsultancyService, NewsRoom, Partner, Technology, Gallery, Website_Setting, \
     Social_Media, TeamMember, Capabilities, Values, WhyChoseUs, Office, Service, Feature, CompanyQuality, \
     AboutPageSetting, WhyChoseUsPageSetting
 
@@ -26,6 +26,7 @@ class HomeView(TemplateView):
         context['offices'] = Office.objects.all()[:3]
         context['softwareService'] = Service.objects.filter(is_software_based=True).order_by('-id')
         context['deviceService'] = Service.objects.filter(is_device_based=True).order_by('-id')
+        context['membership'] = Membership.objects.all()
         return context
 
 class TechnologyView(TemplateView):
@@ -38,6 +39,7 @@ class TechnologyView(TemplateView):
         context['offices'] = Office.objects.all()[:3]
         context['softwareService'] = Service.objects.filter(is_software_based=True).order_by('-id')
         context['deviceService'] = Service.objects.filter(is_device_based=True).order_by('-id')
+        context['membership'] = Membership.objects.all()
         return context
 
 class GalleryView(TemplateView):
@@ -51,6 +53,7 @@ class GalleryView(TemplateView):
         context['offices'] = Office.objects.all()[:3]
         context['softwareService'] = Service.objects.filter(is_software_based=True).order_by('-id')
         context['deviceService'] = Service.objects.filter(is_device_based=True).order_by('-id')
+        context['membership'] = Membership.objects.all()
         return context
 def partner(request):
     context = {
@@ -59,7 +62,8 @@ def partner(request):
         'social': Social_Media.objects.filter(is_active=True),
         'offices': Office.objects.all()[:3],
         'softwareService': Service.objects.filter(is_software_based=True).order_by('-id'),
-        'deviceService': Service.objects.filter(is_device_based=True).order_by('-id')
+        'deviceService': Service.objects.filter(is_device_based=True).order_by('-id'),
+        'membership' : Membership.objects.all()
 
     }
     return render(request, 'partner.html', context)
@@ -67,10 +71,16 @@ def newsRoom(request):
     context = {
         'webinfo': Website_Setting.objects.last(),
         'social': Social_Media.objects.filter(is_active=True),
-        'newsRooms': NewsRoom.objects.all().order_by('-id')[:4],
+        'hiring': NewsRoom.objects.filter(hiring_Activity=True),
+        'MOU_SignIn': NewsRoom.objects.filter(MOU_SignIn_Activity=True),
+        'Nasa_App': NewsRoom.objects.filter(Nasa_App_Activity=True),
+        'Team_Activity': NewsRoom.objects.filter(Team_Activity=True),
+        'Job_Fair': NewsRoom.objects.filter(Job_Fair_Activity=True),
+        'Support_Activity': NewsRoom.objects.filter(Support_Activity=True),
         'offices': Office.objects.all()[:3],
         'softwareService': Service.objects.filter(is_software_based=True).order_by('-id'),
-        'deviceService': Service.objects.filter(is_device_based=True).order_by('-id')
+        'deviceService': Service.objects.filter(is_device_based=True).order_by('-id'),
+        'membership' : Membership.objects.all()
     }
     return render(request, 'newsroom.html', context)
 
@@ -83,6 +93,7 @@ class ContactUsView(TemplateView):
         context['offices'] = Office.objects.all()[:3]
         context['softwareService'] = Service.objects.filter(is_software_based=True).order_by('-id')
         context['deviceService'] = Service.objects.filter(is_device_based=True).order_by('-id')
+        context['membership'] = Membership.objects.all()
         return context
 class ContactView(View):
     def post(self, request):
@@ -120,7 +131,8 @@ def career(request):
         'social': Social_Media.objects.filter(is_active=True),
         'offices': Office.objects.all()[:3],
         'softwareService': Service.objects.filter(is_software_based=True).order_by('-id'),
-        'deviceService': Service.objects.filter(is_device_based=True).order_by('-id')
+        'deviceService': Service.objects.filter(is_device_based=True).order_by('-id'),
+        'membership' : Membership.objects.all()
 
     }
     return render(request, 'career.html', context)
@@ -135,9 +147,12 @@ class TeamView(TemplateView):
         context['management_team'] = TeamMember.objects.filter(is_management_team_member=True, is_draft=False)
         context['development_team_leader'] = TeamMember.objects.filter(is_development_team_leader=True, is_draft=False)
         context['development_team'] = TeamMember.objects.filter(is_development_team_member=True, is_draft=False)
+        context['ui_team'] = TeamMember.objects.filter(is_ui_team_member=True, is_draft=False)
+        context['digital_marketing_team'] = TeamMember.objects.filter(is_digital_marketing_team_member=True, is_draft=False)
         context['offices'] = Office.objects.all()[:3]
         context['softwareService'] = Service.objects.filter(is_software_based=True).order_by('-id')
         context['deviceService'] = Service.objects.filter(is_device_based=True).order_by('-id')
+        context['membership'] = Membership.objects.all()
         return context
 
 class AboutView(TemplateView):
@@ -152,6 +167,8 @@ class AboutView(TemplateView):
         context['companyQuality'] = CompanyQuality.objects.all()[:3]
         context['softwareService'] = Service.objects.filter(is_software_based=True).order_by('-id')
         context['deviceService'] = Service.objects.filter(is_device_based=True).order_by('-id')
+        context['membership'] = Membership.objects.all()
+        context['ac'] = Award_And_Certificate.objects.all()
         return context
 class WhyUsView(TemplateView):
     template_name = 'whyus.html'
@@ -166,6 +183,7 @@ class WhyUsView(TemplateView):
         context['offices'] = Office.objects.all()[:3]
         context['softwareService'] = Service.objects.filter(is_software_based=True).order_by('-id')
         context['deviceService'] = Service.objects.filter(is_device_based=True).order_by('-id')
+        context['membership'] = Membership.objects.all()
         return context
 class softwareServiceDetailView(View):
     def get(self, request, sw_id):
@@ -177,7 +195,8 @@ class softwareServiceDetailView(View):
             'features': Feature.objects.all(),
             'offices': Office.objects.all()[:3],
             'softwareService': Service.objects.filter(is_software_based=True).order_by('-id'),
-            'deviceService': Service.objects.filter(is_device_based=True).order_by('-id')
+            'deviceService': Service.objects.filter(is_device_based=True).order_by('-id'),
+            'membership': Membership.objects.all()
         }
         return render(request, 'detail.html', context=context)
 
@@ -206,8 +225,8 @@ class deviceServiceDetailView(View):
             'social': Social_Media.objects.filter(is_active=True),
             'offices': Office.objects.all()[:3],
             'softwareService': Service.objects.filter(is_software_based=True).order_by('-id'),
-            'deviceService': Service.objects.filter(is_device_based=True).order_by('-id')
-
+            'deviceService': Service.objects.filter(is_device_based=True).order_by('-id'),
+            'membership': Membership.objects.all()
         }
         return render(request, 'deviceDetail.html', context=context)
 
