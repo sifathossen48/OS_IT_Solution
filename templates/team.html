@@ -155,7 +155,7 @@
             <div class="container mb-5">
               <div class="row d-flex justify-content-center">
                 <div class="col col-md-6 shadow-sm p-3">
-                  <img style="width: 30%; margin: auto; display: block; margin-bottom: 30px; border: 2px dashed rgb(73, 197, 255);" src="{{dl.photo.url}}" alt="">
+                  <img style="width: 30%; margin: auto; display: block; margin-bottom: 30px; border: 2px dashed rgb(73, 197, 255);" src="{{dl.photo.url}}" alt="" >
                   <h4 class="text-center">{{dl.name}}</h4>
                   <h5 class="text-center text-warning">{{dl.title}}</h5>
                   <p style="text-align: justify;">{{dl.desc | safe}}</p>
@@ -172,7 +172,7 @@
             {% for dt in development_team %}
             <div class="col">
               <div class="card h-100">
-                <img src="{{dt.photo.url}}" class="card-img-top" alt="...">
+                <img src="{{dt.photo.url}}" class="card-img-top" alt="..." style="height: 200px; width: 175px;">
                 <div class="card-body">
                   <h5 class="card-title">{{dt.name}}</h5>
                   <p class="card-text">{{dt.get_short_desc2 | safe}}</p>
@@ -188,13 +188,33 @@
         <section class="container">
           <h1 class="section-title">Our Digital Marketing Team</h1>
           <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
-            {% for dt in development_team %}
+            {% for dmt in digital_marketing_team %}
             <div class="col">
               <div class="card h-100">
-                <img src="{{dt.photo.url}}" class="card-img-top" alt="...">
+                <img src="{{dmt.photo.url}}" class="card-img-top" alt="...">
                 <div class="card-body">
-                  <h5 class="card-title">{{dt.name}}</h5>
-                  <p class="card-text">{{dt.get_short_desc2 | safe}}</p>
+                  <h5 class="card-title">{{dmt.name}}</h5>
+                  <p class="card-text">{{dmt.get_short_desc2 | safe}}</p>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+       
+          </div>
+        </section>
+
+        
+
+        <section class="container">
+          <h1 class="section-title">Our UI Team</h1>
+          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+            {% for u in ui_team %}
+            <div class="col">
+              <div class="card h-100">
+                <img src="{{u.photo.url}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{u.name}}</h5>
+                  <p class="card-text">{{u.get_short_desc2 | safe}}</p>
                 </div>
               </div>
             </div>
