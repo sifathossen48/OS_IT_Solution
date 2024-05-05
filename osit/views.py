@@ -149,6 +149,7 @@ class TeamView(TemplateView):
         context['development_team'] = TeamMember.objects.filter(is_development_team_member=True, is_draft=False)
         context['ui_team'] = TeamMember.objects.filter(is_ui_team_member=True, is_draft=False)
         context['digital_marketing_team'] = TeamMember.objects.filter(is_digital_marketing_team_member=True, is_draft=False)
+        context['hr_team'] = TeamMember.objects.filter(is_hr_team_member=True, is_draft=False)
         context['offices'] = Office.objects.all()[:3]
         context['softwareService'] = Service.objects.filter(is_software_based=True).order_by('-id')
         context['deviceService'] = Service.objects.filter(is_device_based=True).order_by('-id')

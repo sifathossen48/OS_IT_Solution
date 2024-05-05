@@ -98,6 +98,7 @@ class NewsRoom(models.Model):
     image_2 = models.ImageField(upload_to='NewsRoom/', null=True,blank=True)
     image_3 = models.ImageField(upload_to='NewsRoom/', null=True,blank=True)
     desc = models.TextField(max_length=300,null=True,blank=True)
+    timestamp = models.DateField(auto_now=True)
     hiring_Activity = models.BooleanField(default=False)
     MOU_SignIn_Activity = models.BooleanField(default=False)
     Nasa_App_Activity = models.BooleanField(default=False)
@@ -174,6 +175,7 @@ class TeamMember(models.Model):
     is_development_team_member = models.BooleanField(default=False)
     is_ui_team_member = models.BooleanField(default=False)
     is_digital_marketing_team_member = models.BooleanField(default=False)
+    is_hr_team_member = models.BooleanField(default=False)
     is_draft = models.BooleanField(default=False)
 
     @property
@@ -224,7 +226,7 @@ class Service(models.Model):
     title = models.CharField(max_length=60)
     cover_photo = models.FileField(upload_to='service/')
     icon = models.FileField(upload_to='service/')
-    desc = models.TextField()
+    desc = models.TextField(null=True, blank=True)
     image = models.FileField(upload_to='services/', null=True, blank=True)
     image_2 = models.FileField(upload_to='service/', null=True,blank=True)
     feature_title = models.CharField(max_length=200, null=True, blank=True)

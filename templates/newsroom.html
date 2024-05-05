@@ -4,7 +4,6 @@
 {% block content %}
 <!--header-->
 {% include 'header.html' %}
-
 <main>
     <section id="news" style="    background: rgba(0, 0, 0, 0.822) url('{{webinfo.news_page_banner.url}}'); background-repeat: no-repeat;background-size: cover; background-position: center center; background-attachment: fixed; max-width: 100%; height: 60vh;background-blend-mode: darken;">
         <h1 class="erp-title">{{webinfo.news_page_title}}
@@ -20,30 +19,27 @@
                      <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
                          <div class="carousel-inner">
                              <div class="carousel-item active">
-                                 <img src="{{m.image.url}}" class="d-block w-100" alt="...">
+                                 <img src="{{m.image.url}}" class="d-block w-100" alt="..." style="height: 300px;">
                              </div>
                              {% if m.image_2 %}
                              <div class="carousel-item">
-                                 <img src="{{m.image_2.url}}" class="d-block w-100" alt="...">
+                                 <img src="{{m.image_2.url}}" class="d-block w-100" alt="..." style="height: 300px;">
                              </div>
                              {% endif %}
                              {% if m.image_3 %}
                              <div class="carousel-item">
-                                 <img src="{{m.image_3.url}}" class="d-block w-100" alt="...">
+                                 <img src="{{m.image_3.url}}" class="d-block w-100" alt="..." style="height: 300px;">
                              </div>
                              {% endif %}
                          </div>
                      </div>
                      <div class="card-body">
-                         <p>
-                         <p style="text-align: justify;">{{m.desc}}</p>
-                         </p>
+                        <span class="text-danger"><i class="fa-solid fa-clock"></i> {{m.timestamp}}</span>         
+                         <p style="text-align: justify;">{{m.desc}}</p>  
                      </div>
                  </div>
              </div>
              {% endfor %}
- 
- 
          </div>
      </section>
 
@@ -58,21 +54,22 @@
                     <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="{{h.image.url}}" class="d-block w-100" alt="...">
+                                <img src="{{h.image.url}}" class="d-block w-100" alt="..." style="height: 300px;">
                             </div>
                             {% if h.image_2 %}
                             <div class="carousel-item">
-                                <img src="{{h.image_2.url}}" class="d-block w-100" alt="...">
+                                <img src="{{h.image_2.url}}" class="d-block w-100" alt="..." style="height: 300px;">
                             </div>
                             {% endif %}
                             {% if h.image_3 %}
                             <div class="carousel-item">
-                                <img src="{{h.image_3.url}}" class="d-block w-100" alt="...">
+                                <img src="{{h.image_3.url}}" class="d-block w-100" alt="..." style="height: 300px;">
                             </div>
                             {% endif %}
                         </div>
                     </div>
                     <div class="card-body">
+                        <span class="text-danger"><i class="fa-solid fa-clock"></i> {{h.timestamp}}</span>
                         <p>
                         <p style="text-align: justify;">{{h.desc}}</p>
                         </p>
@@ -80,11 +77,8 @@
                 </div>
             </div>
             {% endfor %}
-
-
         </div>
-    </section>
-   
+    </section> 
      {% comment %} Nasa App Activity Challange {% endcomment %}
      <section class="container mt-5 mb-2 ">
         <h1 style="text-align: center;">Nasa App Activity</h1> 
@@ -96,21 +90,22 @@
                      <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
                          <div class="carousel-inner">
                              <div class="carousel-item active">
-                                 <img src="{{n.image.url}}" class="d-block w-100" alt="...">
+                                 <img src="{{n.image.url}}" class="d-block w-100" alt="..." style="height: 300px;">
                              </div>
                              {% if n.image_2 %}
                              <div class="carousel-item">
-                                 <img src="{{n.image_2.url}}" class="d-block w-100" alt="...">
+                                 <img src="{{n.image_2.url}}" class="d-block w-100" alt="..." style="height: 300px;">
                              </div>
                              {% endif %}
                              {% if n.image_3 %}
                              <div class="carousel-item">
-                                 <img src="{{n.image_3.url}}" class="d-block w-100" alt="...">
+                                 <img src="{{n.image_3.url}}" class="d-block w-100" alt="..." style="height: 300px;">
                              </div>
                              {% endif %}
                          </div>
                      </div>
                      <div class="card-body">
+                        <span class="text-danger"><i class="fa-solid fa-clock"></i> {{n.timestamp}}</span>
                          <p>
                          <p style="text-align: justify;">{{n.desc}}</p>
                          </p>
@@ -118,8 +113,6 @@
                  </div>
              </div>
              {% endfor %}
- 
- 
          </div>
      </section>
     {% comment %} Support Activity{% endcomment %}
@@ -133,21 +126,22 @@
                      <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
                          <div class="carousel-inner">
                              <div class="carousel-item active">
-                                 <img src="{{s.image.url}}" class="d-block w-100" alt="...">
+                                 <img src="{{s.image.url}}" class="d-block w-100" alt="..." style="height: 300px;">
                              </div>
                              {% if s.image_2 %}
                              <div class="carousel-item">
-                                 <img src="{{s.image_2.url}}" class="d-block w-100" alt="...">
+                                 <img src="{{s.image_2.url}}" class="d-block w-100" alt="..." style="height: 300px;">
                              </div>
                              {% endif %}
                              {% if s.image_3 %}
                              <div class="carousel-item">
-                                 <img src="{{s.image_3.url}}" class="d-block w-100" alt="...">
+                                 <img src="{{s.image_3.url}}" class="d-block w-100" alt="..." style="height: 300px;">
                              </div>
                              {% endif %}
                          </div>
                      </div>
                      <div class="card-body">
+                        <span class="text-danger"><i class="fa-solid fa-clock"></i> {{s.timestamp}}</span>
                          <p>
                          <p style="text-align: justify;">{{s.desc}}</p>
                          </p>
@@ -155,11 +149,8 @@
                  </div>
              </div>
              {% endfor %}
- 
- 
          </div>
-     </section>
-    
+     </section>  
       {% comment %} Team Activity {% endcomment %}
       <section class="container mt-5 mb-2 ">
         <h1 style="text-align: center;">Team Activity</h1> 
@@ -171,21 +162,22 @@
                      <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
                          <div class="carousel-inner">
                              <div class="carousel-item active">
-                                 <img src="{{t.image.url}}" class="d-block w-100" alt="...">
+                                 <img src="{{t.image.url}}" class="d-block w-100" alt="..." style="height: 300px;">
                              </div>
                              {% if t.image_2 %}
                              <div class="carousel-item">
-                                 <img src="{{t.image_2.url}}" class="d-block w-100" alt="...">
+                                 <img src="{{t.image_2.url}}" class="d-block w-100" alt="..." style="height: 300px;">
                              </div>
                              {% endif %}
                              {% if t.image_3 %}
                              <div class="carousel-item">
-                                 <img src="{{t.image_3.url}}" class="d-block w-100" alt="...">
+                                 <img src="{{t.image_3.url}}" class="d-block w-100" alt="..." style="height: 300px;">
                              </div>
                              {% endif %}
                          </div>
                      </div>
                      <div class="card-body">
+                        <span class="text-danger"><i class="fa-solid fa-clock"></i> {{t.timestamp}}</span>
                          <p>
                          <p style="text-align: justify;">{{t.desc}}</p>
                          </p>
@@ -193,11 +185,8 @@
                  </div>
              </div>
              {% endfor %}
- 
- 
          </div>
      </section>
-
       {% comment %} Job Fair Activity {% endcomment %}
       <section class="container mt-5 mb-2 ">
         <h1 style="text-align: center;">Job Fair Activity</h1> 
@@ -209,21 +198,22 @@
                      <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
                          <div class="carousel-inner">
                              <div class="carousel-item active">
-                                 <img src="{{j.image.url}}" class="d-block w-100" alt="...">
+                                 <img src="{{j.image.url}}" class="d-block w-100" alt="..." style="height: 300px;">
                              </div>
                              {% if j.image_2 %}
                              <div class="carousel-item">
-                                 <img src="{{j.image_2.url}}" class="d-block w-100" alt="...">
+                                 <img src="{{j.image_2.url}}" class="d-block w-100" alt="..." style="height: 300px;">
                              </div>
                              {% endif %}
                              {% if j.image_3 %}
                              <div class="carousel-item">
-                                 <img src="{{j.image_3.url}}" class="d-block w-100" alt="...">
+                                 <img src="{{j.image_3.url}}" class="d-block w-100" alt="..." style="height: 300px;">
                              </div>
                              {% endif %}
                          </div>
                      </div>
                      <div class="card-body">
+                        <span class="text-danger"><i class="fa-solid fa-clock"></i> {{j.timestamp}}</span>
                          <p>
                          <p style="text-align: justify;">{{j.desc}}</p>
                          </p>
@@ -231,15 +221,10 @@
                  </div>
              </div>
              {% endfor %}
- 
- 
          </div>
      </section>
     </main>
-
 <!-- ===========================================================Footer Start================================= -->
-
-
 {% include 'footer.html' %}
 
 <!-- =========================================== footer end================================= -->
