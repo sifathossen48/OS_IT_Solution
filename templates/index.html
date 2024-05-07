@@ -305,13 +305,13 @@
     <section class="container" id="">
       <h1 class="section-title">{{webinfo.news_page_title}}</h1>
       <div class="row row-cols-1 row-cols-md-4 g-2">
-         {% for nr in newsRooms %}
+        {% for m in MOU_SignIn %}
         <div class="col">
           <div class="card" style="height: 525px;">
-            <img src="{{nr.image.url}}" class="card-img-top" alt="...">
+            <img src="{{m.image.url}}" class="card-img-top" alt="...">
             <div class="card-body">
-              <span class="text-danger"><i class="fa-solid fa-clock"></i> {{nr.timestamp}}</span>
-              <p style="text-align: justify;">{{nr.short_desc}}...</p>
+              <span class="text-danger"><i class="fa-solid fa-clock"></i> {{m.timestamp}}</span>
+              <p style="text-align: justify;">{{m.short_desc}}...</p>
             </div>
           </div>
         </div>
@@ -326,14 +326,14 @@
 
 
 
-
+    {% comment %} client section {% endcomment %}
     <section>
       <h1 class="section-title">{{webinfo.client_section_title}}</h1>
       <div class="container brand-carousel section-padding owl-carousel">
         {% for client in clients %}
         <div class="single-logo">
           <img class="" src="{{client.company_logo.url}}" alt=""
-            style="width: 150px; margin-left: auto;margin-right: auto; display: block;">
+            style="width: 150px; margin-left: auto;margin-right: auto; display: block; height: 80px;">
         </div>
         {% endfor %}
       </div>
@@ -343,6 +343,7 @@
       </h3>
     </section>
 
+    {% comment %} partner section {% endcomment %}
     <section>
       <section>
         <h1 class="section-title">{{webinfo.partner_section_title}}</h1>
@@ -350,7 +351,7 @@
           {% for p in partners %}
           <div class="single-logo">
             <img class="" src="{{p.company_logo.url}}" alt=""
-              style="width: 150px; margin-left: auto;margin-right: auto; display: block;">
+              style="width: 150px; margin-left: auto;margin-right: auto; display: block; height: 80px;">
           </div>
          {% endfor %}
         </div>

@@ -39,7 +39,7 @@ class Website_Setting(models.Model):
     technology_page_title = models.CharField(max_length=30)
     technology_page_banner = models.ImageField(upload_to='banner/')
     technology_icon = models.FileField(upload_to='icon/')
-    award_section_title = models.CharField(max_length=30)
+    
     def __str__(self):
         return self.site_name
 class AboutPageSetting(models.Model):
@@ -56,6 +56,8 @@ class AboutPageSetting(models.Model):
     mission_desc = models.TextField()
     capabilities_section_title = models.CharField(max_length=30)
     capabilities_section_banner = models.ImageField(upload_to='banner/')
+    award_section_title = models.CharField(max_length=30)
+    video_section_title = models.CharField(max_length=30)
     def __str__(self):
         return self.about_page_title
 
@@ -258,5 +260,11 @@ class Membership(models.Model):
 class Award_And_Certificate(models.Model):
     title = models.CharField(max_length=60)
     image = models.ImageField(upload_to='certificate/')
+    def __str__(self):
+        return self.title
+
+class Video(models.Model):
+    title = models.CharField(max_length=30)
+    link = models.URLField(max_length=200)
     def __str__(self):
         return self.title

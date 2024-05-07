@@ -4,7 +4,7 @@ from django.views import View
 from django.views.generic import TemplateView
 from osit import forms
 from osit.forms import CareerForm
-from osit.models import Award_And_Certificate, Membership, Slider, ConsultancyService, NewsRoom, Partner, Technology, Gallery, Website_Setting, \
+from osit.models import Award_And_Certificate, Membership, Slider, ConsultancyService, NewsRoom, Partner, Technology, Gallery, Video, Website_Setting, \
     Social_Media, TeamMember, Capabilities, Values, WhyChoseUs, Office, Service, Feature, CompanyQuality, \
     AboutPageSetting, WhyChoseUsPageSetting
 
@@ -18,7 +18,7 @@ class HomeView(TemplateView):
         context['social'] = Social_Media.objects.filter(is_active=True)
         context['sliders'] = Slider.objects.all()
         context['consultancyServices'] = ConsultancyService.objects.all()
-        context['newsRooms'] = NewsRoom.objects.all().order_by('-id')[:4]
+        context['MOU_SignIn'] = NewsRoom.objects.filter(MOU_SignIn_Activity=True).order_by('-id')[:4] 
         context['clients'] = Partner.objects.filter(is_only_client=True)
         context['partners'] = Partner.objects.filter(is_only_client=False)
         context['techs'] = Technology.objects.all()[:15]
@@ -170,6 +170,7 @@ class AboutView(TemplateView):
         context['deviceService'] = Service.objects.filter(is_device_based=True).order_by('-id')
         context['membership'] = Membership.objects.all()
         context['ac'] = Award_And_Certificate.objects.all()
+        context['videos'] = Video.objects.all()
         return context
 class WhyUsView(TemplateView):
     template_name = 'whyus.html'
