@@ -15,5 +15,4 @@ urlpatterns = [
     path('why_us/', views.WhyUsView.as_view(), name='why-us'),
     path('softwareService/details/<int:sw_id>', views.softwareServiceDetailView.as_view(), name='softwareService'),
     path('deviceService/details/<int:dv_id>', views.deviceServiceDetailView.as_view(), name='deviceService')
-
 ]
